@@ -207,7 +207,8 @@
     </style>
 
     <!-- Sidebar -->
-    <aside class="w-full md:w-[360px] bg-white shadow-xl z-10 flex flex-col h-1/2 md:h-full border-r border-gray-200">
+    <aside id="sidebar"
+      class="w-full md:w-[360px] bg-white shadow-xl z-10 flex flex-col h-[70%] md:h-full border-r border-gray-200">
 
       <!-- Sidebar Header (Desktop) -->
       <div class="p-6 border-b border-gray-100 hidden md:block">
@@ -281,8 +282,17 @@
     </aside>
 
     <!-- Map Container -->
-    <main class="flex-1 h-1/2 md:h-full relative z-0">
+    <main id="map-container" class="flex-1 h-[30%] md:h-full relative z-0">
       <div id="map" class="w-full h-full"></div>
+
+      <!-- Back to List Button (Mobile Fullscreen) -->
+      <button id="back-to-list-btn" onclick="toggleFullscreenMap()"
+        class="hidden md:hidden fixed top-4 left-4 z-[1001] bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg border border-gray-200 font-medium text-sm flex items-center gap-2 hover:bg-gray-50 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span id="back-btn-text">Lista</span>
+      </button>
 
       <!-- Floating Logo -->
       <!-- Floating Logo -->
@@ -6738,6 +6748,33 @@
       });
     }
 
+    // Toggle fullscreen map mode (mobile only)
+    function toggleFullscreenMap() {
+      const sidebar = document.getElementById('sidebar');
+      const mapContainer = document.getElementById('map-container');
+      const backBtn = document.getElementById('back-to-list-btn');
+
+      // Check if currently in fullscreen mode
+      const isFullscreen = mapContainer.classList.contains('!h-full');
+
+      if (isFullscreen) {
+        // Exit fullscreen - back to 70/30 split
+        sidebar.classList.remove('!hidden');
+        mapContainer.classList.remove('!h-full');
+        mapContainer.classList.add('h-[30%]');
+        backBtn.classList.add('hidden');
+      } else {
+        // Enter fullscreen
+        sidebar.classList.add('!hidden');
+        mapContainer.classList.remove('h-[30%]');
+        mapContainer.classList.add('!h-full');
+        backBtn.classList.remove('hidden');
+
+        // Resize map to fit new container
+        setTimeout(() => map.invalidateSize(), 100);
+      }
+    }
+
     function focusOnMap(id) {
       const marker = markers[id];
       if (marker) {
@@ -6753,6 +6790,11 @@
         setTimeout(() => {
           marker._icon.style.filter = originalFilter;
         }, 2000);
+
+        // On mobile, enter fullscreen mode
+        if (window.innerWidth < 768) {
+          setTimeout(() => toggleFullscreenMap(), 300);
+        }
       }
     }
 
