@@ -214,7 +214,7 @@
 
     <!-- Sidebar -->
     <aside id="sidebar"
-      class="w-full md:w-[360px] bg-white shadow-xl z-10 flex flex-col h-[80vh] md:h-full border-r border-gray-200">
+      class="w-full md:w-[360px] bg-white shadow-xl z-10 flex flex-col h-[70vh] md:h-full border-r border-gray-200">
 
       <!-- Sidebar Header (Desktop) -->
       <div class="p-6 border-b border-gray-100 hidden md:block">
@@ -362,6 +362,7 @@
         searchPlaceholder: "Search places...",
         viewOnMap: "View on map",
         openGoogleMaps: "Open in Google Maps",
+        backToList: "List",
         contact: "Contact:",
         noResults: "No places found matching your criteria.",
         allCategories: "All Categories",
@@ -390,6 +391,7 @@
         searchPlaceholder: "Buscar lugares...",
         viewOnMap: "Ver en el mapa",
         openGoogleMaps: "Abrir en Google Maps",
+        backToList: "Lista",
         contact: "Contacto:",
         noResults: "No se encontraron lugares con sus criterios.",
         allCategories: "Todas las categorías",
@@ -418,6 +420,7 @@
         searchPlaceholder: "Buscar lugares...",
         viewOnMap: "Ver no mapa",
         openGoogleMaps: "Abrir no Google Maps",
+        backToList: "Lista",
         contact: "Contato:",
         noResults: "Nenhum lugar encontrado com seus critérios.",
         allCategories: "Todas as categorias",
@@ -6722,6 +6725,12 @@
 
         locateBtn.title = btnTitle;
         tooltipText.textContent = bannerText;
+      }
+
+      // Update back button text
+      const backBtnText = document.getElementById('back-btn-text');
+      if (backBtnText) {
+        backBtnText.textContent = t.backToList;
       }
 
       // Update Language Button State
