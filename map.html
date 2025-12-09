@@ -6779,6 +6779,9 @@
         mapContainer.classList.add('min-h-[400px]');
         backBtn.classList.remove('flex');
         backBtn.classList.add('hidden');
+        
+        // Scroll to top to show header on mobile
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         // Enter fullscreen
         sidebar.classList.add('!hidden');
