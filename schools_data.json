@@ -1,0 +1,155 @@
+[
+    {
+        "name": "Dr. N.H. Jones Elementary School",
+        "category": "Schools - Elementary",
+        "rating": "9/10",
+        "grades": "PK-5",
+        "address": "1900 SW 5th St, Ocala, FL 34471",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "Eighth Street Elementary School",
+        "category": "Schools - Elementary",
+        "rating": "8/10",
+        "grades": "PK-5",
+        "address": "513 SE 8th St, Ocala, FL 34471",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "Saddlewood Elementary School",
+        "category": "Schools - Elementary",
+        "rating": "6/10",
+        "grades": "PK-5",
+        "address": "3700 SW 43rd Ct, Ocala, FL 34474",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "Maplewood Elementary School",
+        "category": "Schools - Elementary",
+        "rating": "7/10",
+        "grades": "PK-5",
+        "address": "4751 SE 24th St, Ocala, FL 34471",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "Shady Hill Elementary School",
+        "category": "Schools - Elementary",
+        "rating": "6/10",
+        "grades": "PK-5",
+        "address": "5959 S Magnolia Ave, Ocala, FL 34471",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "College Park Elementary School",
+        "category": "Schools - Elementary",
+        "rating": "3/10",
+        "grades": "PK-5",
+        "address": "1330 SW 33rd Ave, Ocala, FL 34474",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "Greenway Elementary School",
+        "category": "Schools - Elementary",
+        "rating": "3/10",
+        "grades": "PK-5",
+        "address": "207 Midway Rd, Ocala, FL 34472",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "Osceola Middle School",
+        "category": "Schools - Middle",
+        "rating": "8/10",
+        "grades": "6-8",
+        "address": "526 SE Tuscawilla Ave, Ocala, FL 34471",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "Fort King Middle School",
+        "category": "Schools - Middle",
+        "rating": "2/10",
+        "grades": "6-8",
+        "address": "545 NE 17th Ave, Ocala, FL 34470",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "Howard Middle School",
+        "category": "Schools - Middle",
+        "rating": "B-",
+        "grades": "6-8",
+        "address": "1655 NW 10TH ST, Ocala, FL 34475",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "Ocali Charter Middle School",
+        "category": "Schools - Middle",
+        "rating": "2/5",
+        "grades": "6-8",
+        "address": "3233 SE Maricamp Rd, Ocala, FL 34478",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "West Port High School",
+        "category": "Schools - High",
+        "rating": "4/10",
+        "grades": "9-12",
+        "address": "3733 SW 80th Ave, Ocala, FL",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "Belleview High School",
+        "category": "Schools - High",
+        "rating": "3.6/5",
+        "grades": "9-12",
+        "address": "10400 SE 36th Ave, Belleview, FL 34420",
+        "city": "Belleview",
+        "state": "FL"
+    },
+    {
+        "name": "St. John Lutheran School",
+        "category": "Schools - Private",
+        "rating": "4.4/5",
+        "grades": "PK-12",
+        "address": "1915 SE Lake Weir Avenue, Ocala, FL 34471",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "Ocala Christian Academy",
+        "category": "Schools - Private",
+        "rating": "3.75/5",
+        "grades": "PK-12",
+        "address": "1714 SE 36th Avenue, Ocala, FL 34471",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "Trinity Catholic High School",
+        "category": "Schools - Private",
+        "rating": "4.1/5",
+        "grades": "9-12",
+        "address": "2600 SW 42nd Street, Ocala, FL 34471",
+        "city": "Ocala",
+        "state": "FL"
+    },
+    {
+        "name": "Ambleside School Of Ocala",
+        "category": "Schools - Private",
+        "rating": "5/5",
+        "grades": "K-8",
+        "address": "507 SE Broadway St, Ocala, FL 34471",
+        "city": "Ocala",
+        "state": "FL"
+    }
+]

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OcalaMap - Explore Ocala with Confidence</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description"
+        content="The definitive visual guide to discovering everything Ocala has to offer. Schools, hospitals, nature, and more.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ocalamap.org">
+    <meta property="og:title" content="OcalaMap - Explore Ocala with Confidence">
+    <meta property="og:description" content="The definitive visual guide to discovering everything Ocala has to offer.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .text-primary {
+            color: #0ea5e9;
+        }
+
+        /* Sky 500 */
+        .bg-primary {
+            background-color: #0ea5e9;
+        }
+
+        .text-accent {
+            color: #f97316;
+        }
+
+        /* Orange 500 */
+        .bg-accent {
+            background-color: #f97316;
+        }
+
+        .hover-bg-accent:hover {
+            background-color: #ea580c;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="container mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <img src="logo.png" alt="OcalaMap Logo" class="h-8 md:h-10 w-auto">
+            </div>
+
+            <div class="flex items-center gap-4">
+                <!-- Language Selector -->
+                <div class="relative">
+                    <button id="lang-btn" onclick="toggleLangMenu()"
+                        class="flex items-center gap-2 px-3 py-1.5 rounded-full hover:bg-gray-100 transition-colors border border-gray-200 text-sm font-medium">
+                        <span id="current-flag">🇺🇸</span>
+                        <span id="current-lang-code">EN</span>
+                        <svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="lang-menu"
+                        class="hidden absolute right-0 top-full mt-2 w-32 bg-white rounded-lg shadow-xl border border-gray-100 py-1 overflow-hidden z-[60]">
+                        <button onclick="setLanguage('en')"
+                            class="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-left text-sm">🇺🇸
+                            English</button>
+                        <button onclick="setLanguage('es')"
+                            class="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-left text-sm">🇪🇸
+                            Español</button>
+                        <button onclick="setLanguage('pt')"
+                            class="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-left text-sm">🇧🇷
+                            Português</button>
+                    </div>
+                </div>
+
+                <a href="map.html"
+                    class="bg-accent hover-bg-accent text-white px-5 py-2 rounded-full font-semibold shadow-lg shadow-orange-500/20 transition-all transform hover:scale-105 text-sm md:text-base whitespace-nowrap"
+                    data-i18n="cta_button">
+                    Open OcalaMap
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient pt-20 pb-24 md:pt-32 md:pb-40 px-4 md:px-6 relative overflow-hidden">
+        <div class="container mx-auto max-w-5xl text-center relative z-10">
+            <span
+                class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-xs font-bold tracking-wider mb-6 uppercase"
+                data-i18n="hero_badge">Updated 2025 Version</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-8"
+                data-i18n="hero_title">
+                Explore Ocala with <span class="text-accent">Confidence</span>.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed"
+                data-i18n="hero_subtitle">
+                The perfect map for those who want to live the best of the city. Schools, hospitals, nature, and hidden
+                gems.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+                <a href="map.html"
+                    class="bg-accent hover-bg-accent text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-orange-500/30 transition-all transform hover:translate-y-[-2px] hover:scale-105 flex items-center justify-center gap-2">
+                    <span data-i18n="cta_open">Open OcalaMap</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-medium text-gray-500 max-w-4xl mx-auto">
+                <div class="flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span data-i18n="hero_feat_1">Simple & Functional</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span data-i18n="hero_feat_2">Curated Categories</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span data-i18n="hero_feat_3">Google Maps Link</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span data-i18n="hero_feat_4">Always Updated</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- What Is Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+            <div class="text-center mb-16">
+                <span class="text-accent font-bold tracking-wider uppercase text-sm mb-2 block"
+                    data-i18n="section_about">About Us</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6" data-i18n="what_is_title">What is
+                    OcalaMap?</h2>
+                <p class="text-lg text-gray-600 leading-relaxed" data-i18n="what_is_desc">
+                    OcalaMap is a complete interactive map, created especially for visitors, families, and new residents
+                    who want to get to know Ocala without complications.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <span class="bg-green-100 text-green-600 p-1 rounded-full mt-1"><svg class="w-4 h-4" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg></span>
+                        <span class="text-gray-700" data-i18n="feat_parks">Parks, trails, and nature reserves</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="bg-green-100 text-green-600 p-1 rounded-full mt-1"><svg class="w-4 h-4" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg></span>
+                        <span class="text-gray-700" data-i18n="feat_outdoor">Outdoor adventures</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="bg-green-100 text-green-600 p-1 rounded-full mt-1"><svg class="w-4 h-4" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg></span>
+                        <span class="text-gray-700" data-i18n="feat_horses">Horse riding and farms</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="bg-green-100 text-green-600 p-1 rounded-full mt-1"><svg class="w-4 h-4" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg></span>
+                        <span class="text-gray-700" data-i18n="feat_culture">Cultural tours and museums</span>
+                    </li>
+                </ul>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <span class="bg-green-100 text-green-600 p-1 rounded-full mt-1"><svg class="w-4 h-4" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg></span>
+                        <span class="text-gray-700" data-i18n="feat_family">Attractions for kids and families</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="bg-green-100 text-green-600 p-1 rounded-full mt-1"><svg class="w-4 h-4" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg></span>
+                        <span class="text-gray-700" data-i18n="feat_schools">All public, private, and charter
+                            schools</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="bg-green-100 text-green-600 p-1 rounded-full mt-1"><svg class="w-4 h-4" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg></span>
+                        <span class="text-gray-700" data-i18n="feat_hospitals">All major hospitals and health
+                            centers</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="bg-green-100 text-green-600 p-1 rounded-full mt-1"><svg class="w-4 h-4" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg></span>
+                        <span class="text-gray-700" data-i18n="feat_shops">Shops, tours, experiences, and more</span>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="text-center mt-12 font-medium text-gray-800" data-i18n="mission_statement">
+                Our mission is to facilitate your journey and make you feel at home — even if it's your first time in
+                the city.
+            </p>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="py-20 bg-gray-50 border-t border-gray-100">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4" data-i18n="why_title">Why we created OcalaMap?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="why_subtitle">We know what it's like to arrive in
+                    a new city and feel lost. That's why we built this tool.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="reason_security_title">Security</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-i18n="reason_security_desc">See everything
+                        before you leave home. Plan your route, choose the ideal neighborhood, find schools and
+                        hospitals clearly.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div
+                        class="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="reason_time_title">Save Time</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-i18n="reason_time_desc">No more searching on
+                        20 different sites — everything is organized in one place here.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="reason_clarity_title">Clarity</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-i18n="reason_clarity_desc">Simple filters →
+                        choose what you want to see → click → arrive.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div
+                        class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="reason_experience_title">Best Experience
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-i18n="reason_experience_desc">We select only
+                        real, reliable places that are really worth it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center" data-i18n="categories_title">Categories
+                Available</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Group 1 -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-blue-600 border-b border-blue-100 pb-2"
+                        data-i18n="cat_activities">Activities & Culture</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li data-i18n="cat_item_activities">Activities</li>
+                        <li data-i18n="cat_item_arts">Arts & Culture</li>
+                        <li data-i18n="cat_item_museums">Museums</li>
+                        <li data-i18n="cat_item_family">Family Fun</li>
+                        <li data-i18n="cat_item_local">Local Experiences</li>
+                    </ul>
+                </div>
+
+                <!-- Group 2 -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-green-600 border-b border-green-100 pb-2" data-i18n="cat_nature">
+                        Nature & Adventure</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li data-i18n="cat_item_nature">Nature</li>
+                        <li data-i18n="cat_item_wildlife">Wildlife Sanctuaries</li>
+                        <li data-i18n="cat_item_boating">Boating & Fishing</li>
+                        <li data-i18n="cat_item_trails">Trails & Parks</li>
+                    </ul>
+                </div>
+
+                <!-- Group 3 -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-orange-600 border-b border-orange-100 pb-2"
+                        data-i18n="cat_equine">Equine & Experiences</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li data-i18n="cat_item_equine">Equine</li>
+                        <li data-i18n="cat_item_horse_farms">Horse Farms by Appointment</li>
+                        <li data-i18n="cat_item_riding">Horseback Riding & Guided Tours</li>
+                    </ul>
+                </div>
+
+                <!-- Group 4 -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-red-600 border-b border-red-100 pb-2" data-i18n="cat_essential">
+                        Essential Services</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li data-i18n="cat_item_schools">Schools</li>
+                        <li data-i18n="cat_item_hospitals">Hospitals</li>
+                        <li><span data-i18n="cat_item_neighborhoods">Neighborhoods</span> <span
+                                class="text-xs bg-gray-100 text-gray-500 px-1 rounded ml-1" data-i18n="soon">Coming
+                                Soon</span></li>
+                        <li><span data-i18n="cat_item_shops">Shops & Markets</span> <span
+                                class="text-xs bg-gray-100 text-gray-500 px-1 rounded ml-1" data-i18n="soon">Coming
+                                Soon</span></li>
+                    </ul>
+                </div>
+
+                <!-- Group 5 -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-teal-600 border-b border-teal-100 pb-2" data-i18n="cat_rentals">
+                        Rentals & Charters</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li data-i18n="cat_item_rentals_charters">Rentals & Charters</li>
+                        <li data-i18n="cat_item_canoe">Canoe & Boat Rentals</li>
+                        <li data-i18n="cat_item_charters">Charters</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="text-center mt-12 text-gray-500 italic" data-i18n="more_coming">New categories coming very soon!
+            </p>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="py-20 bg-gray-900 text-white rounded-t-3xl md:rounded-3xl mx-0 md:mx-4 mb-0 md:mb-4">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center" data-i18n="who_title">Who is OcalaMap for?</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl mb-4">👨‍👩‍👧</div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="target_families_title">Families</h3>
+                    <p class="text-gray-400 text-sm" data-i18n="target_families_desc">Discover parks, activities,
+                        schools, and safety when moving to the city.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🌎</div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="target_tourists_title">Tourists</h3>
+                    <p class="text-gray-400 text-sm" data-i18n="target_tourists_desc">Explore Ocala without taking risks
+                        or wasting time.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🏡</div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="target_residents_title">New Residents</h3>
+                    <p class="text-gray-400 text-sm" data-i18n="target_residents_desc">Find schools, hospitals, quiet
+                        neighborhoods, green areas, and everything you need.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🐴</div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="target_horses_title">Horse & Nature Lovers</h3>
+                    <p class="text-gray-400 text-sm" data-i18n="target_horses_desc">Ocala is your paradise — and
+                        OcalaMap shows you the best places.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-accent text-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6" data-i18n="cta_final_title">Ready to explore Ocala like
+                never before?</h2>
+            <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto" data-i18n="cta_final_subtitle">Discover every corner
+                of the city with a beautiful, clear, and reliable map.</p>
+
+            <a href="map.html"
+                class="inline-block bg-white text-orange-600 px-10 py-5 rounded-full font-bold text-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                data-i18n="cta_open_map">
+                Open OcalaMap
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <img src="logo.png" alt="OcalaMap Logo" class="h-6 w-auto grayscale opacity-50">
+            </div>
+            <p class="text-gray-500 mb-6" data-i18n="footer_tagline">Explore Ocala with safety and simplicity. <br
+                    class="hidden sm:block"> Project created with love for visitors, families, and new residents.</p>
+            <div class="flex justify-center gap-6 mb-6 text-sm text-gray-500">
+                <a href="terms.html" class="hover:text-accent transition-colors" data-i18n="footer_terms">Terms of
+                    Service</a>
+                <a href="privacy.html" class="hover:text-accent transition-colors" data-i18n="footer_privacy">Privacy
+                    Policy</a>
+            </div>
+            <p class="text-sm text-gray-400" data-i18n="footer_copyright">© 2025 Ocalamap.org — All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Translation Logic -->
+    <script>
+        const translations = {
+            en: {
+                hero_badge: "Updated 2025 Version",
+                hero_title: 'Explore Ocala with <span class="text-accent">Confidence</span>.',
+                hero_subtitle: "The perfect map for those who want to live the best of the city. Schools, hospitals, nature, and hidden gems.",
+                cta_button: "Open OcalaMap",
+                cta_open: "Open OcalaMap",
+                hero_feat_1: "Simple & Functional",
+                hero_feat_2: "Curated Categories",
+                hero_feat_3: "Google Maps Link",
+                hero_feat_4: "Always Updated",
+                section_about: "About Us",
+                what_is_title: "What is OcalaMap?",
+                what_is_desc: "OcalaMap is a complete interactive map, created especially for visitors, families, and new residents who want to get to know Ocala without complications.",
+                feat_parks: "Parks, trails, and nature reserves",
+                feat_outdoor: "Outdoor adventures",
+                feat_horses: "Horse riding and farms",
+                feat_culture: "Cultural tours and museums",
+                feat_family: "Attractions for kids and families",
+                feat_schools: "All public, private, and charter schools",
+                feat_hospitals: "All major hospitals and health centers",
+                feat_shops: "Shops, tours, experiences, and more",
+                mission_statement: "Our mission is to facilitate your journey and make you feel at home — even if it's your first time in the city.",
+                why_title: "Why we created OcalaMap?",
+                why_subtitle: "We know what it's like to arrive in a new city and feel lost. That's why we built this tool.",
+                reason_security_title: "Security",
+                reason_security_desc: "See everything before you leave home. Plan your route, choose the ideal neighborhood, find schools and hospitals clearly.",
+                reason_time_title: "Save Time",
+                reason_time_desc: "No more searching on 20 different sites — everything is organized in one place here.",
+                reason_clarity_title: "Clarity",
+                reason_clarity_desc: "Simple filters → choose what you want to see → click → arrive.",
+                reason_experience_title: "Best Experience",
+                reason_experience_desc: "We select only real, reliable places that are really worth it.",
+                categories_title: "Categories Available",
+                cat_activities: "Activities & Culture",
+                cat_nature: "Nature & Adventure",
+                cat_equine: "Equine & Experiences",
+                cat_essential: "Essential Services",
+                cat_rentals: "Rentals & Charters",
+                soon: "Coming Soon",
+                more_coming: "New categories coming very soon!",
+                who_title: "Who is OcalaMap for?",
+                target_families_title: "Families",
+                target_families_desc: "Discover parks, activities, schools, and safety when moving to the city.",
+                target_tourists_title: "Tourists",
+                target_tourists_desc: "Explore Ocala without taking risks or wasting time.",
+                target_residents_title: "New Residents",
+                target_residents_desc: "Find schools, hospitals, quiet neighborhoods, green areas, and everything you need.",
+                target_horses_title: "Horse & Nature Lovers",
+                target_horses_desc: "Ocala is your paradise — and OcalaMap shows you the best places.",
+                cta_final_title: "Ready to explore Ocala like never before?",
+                cta_final_subtitle: "Discover every corner of the city with a beautiful, clear, and reliable map.",
+                cta_open_map: "Open OcalaMap",
+                footer_tagline: "Explore Ocala with safety and simplicity. Project created with love for visitors, families, and new residents.",
+                footer_terms: "Terms of Service",
+                footer_privacy: "Privacy Policy",
+                footer_copyright: "© 2025 Ocalamap.org — All Rights Reserved.",
+                cat_item_activities: "Activities",
+                cat_item_arts: "Arts & Culture",
+                cat_item_museums: "Museums",
+                cat_item_family: "Family Fun",
+                cat_item_local: "Local Experiences",
+                cat_item_nature: "Nature",
+                cat_item_wildlife: "Wildlife Sanctuaries",
+                cat_item_boating: "Boating & Fishing",
+                cat_item_trails: "Trails & Parks",
+                cat_item_equine: "Equine",
+                cat_item_horse_farms: "Horse Farms by Appointment",
+                cat_item_riding: "Horseback Riding & Guided Tours",
+                cat_item_schools: "Schools",
+                cat_item_hospitals: "Hospitals",
+                cat_item_neighborhoods: "Neighborhoods",
+                cat_item_shops: "Shops & Markets",
+                cat_item_rentals_charters: "Rentals & Charters",
+                cat_item_canoe: "Canoe & Boat Rentals",
+                cat_item_charters: "Charters"
+            },
+            pt: {
+                hero_badge: "Versão Atualizada 2025",
+                hero_title: 'Explore Ocala com <span class="text-accent">Confiança</span>.',
+                hero_subtitle: "O mapa perfeito para quem quer viver o melhor da cidade. Escolas, hospitais, natureza e tesouros escondidos.",
+                cta_button: "Abrir OcalaMap",
+                cta_open: "Abrir OcalaMap",
+                hero_feat_1: "Simples e Funcional",
+                hero_feat_2: "Categorias Curadas",
+                hero_feat_3: "Link Google Maps",
+                hero_feat_4: "Sempre Atualizado",
+                section_about: "Sobre Nós",
+                what_is_title: "O que é o OcalaMap?",
+                what_is_desc: "O OcalaMap é um mapa interativo completo, criado especialmente para visitantes, famílias e novos moradores que querem conhecer Ocala sem complicação.",
+                feat_parks: "Parques, trilhas e reservas naturais",
+                feat_outdoor: "Aventuras ao ar livre",
+                feat_horses: "Passeios a cavalo e fazendas",
+                feat_culture: "Roteiros culturais e museus",
+                feat_family: "Atrações para crianças e famílias",
+                feat_schools: "Todas as escolas públicas, privadas e charters",
+                feat_hospitals: "Todos os principais hospitais e centros de saúde",
+                feat_shops: "Lojas, tours, experiências e muito mais",
+                mission_statement: "Nossa missão é facilitar sua jornada e te fazer sentir em casa — mesmo que seja sua primeira vez na cidade.",
+                why_title: "Por que criamos o OcalaMap?",
+                why_subtitle: "Nós sabemos como é chegar em uma cidade nova e se sentir perdido. Pensando nisso, criamos este mapa.",
+                reason_security_title: "Segurança",
+                reason_security_desc: "Veja tudo antes de sair de casa. Planeje sua rota, escolha o bairro ideal, encontre escolas e hospitais com clareza.",
+                reason_time_title: "Economize Tempo",
+                reason_time_desc: "Nada de pesquisar em 20 sites diferentes — aqui está tudo organizado em um só lugar.",
+                reason_clarity_title: "Clareza",
+                reason_clarity_desc: "Filtros simples → escolha o que quer ver → clique → chegou.",
+                reason_experience_title: "Melhor Experiência",
+                reason_experience_desc: "Selecionamos apenas lugares reais, confiáveis e que realmente valem a pena.",
+                categories_title: "Categorias Disponíveis",
+                cat_activities: "Atividades e Cultura",
+                cat_nature: "Natureza e Aventura",
+                cat_equine: "Cavalos e Experiências",
+                cat_essential: "Serviços Essenciais",
+                cat_rentals: "Aluguéis e Charters",
+                soon: "Em Breve",
+                more_coming: "Novas categorias chegando muito em breve!",
+                who_title: "Para quem é o OcalaMap?",
+                target_families_title: "Famílias",
+                target_families_desc: "Descubram parques, atividades, escolas e segurança ao se mudar para a cidade.",
+                target_tourists_title: "Turistas",
+                target_tourists_desc: "Explore Ocala sem correr riscos ou perder tempo.",
+                target_residents_title: "Novos Moradores",
+                target_residents_desc: "Encontre escolas, hospitais, bairros tranquilos, áreas verdes e tudo o que precisa.",
+                target_horses_title: "Amantes de Cavalos",
+                target_horses_desc: "Ocala é o seu paraíso — e o OcalaMap te mostra os melhores lugares.",
+                cta_final_title: "Pronto para explorar Ocala como nunca antes?",
+                cta_final_subtitle: "Descubra cada canto da cidade com um mapa bonito, claro e confiável.",
+                cta_open_map: "Abrir OcalaMap",
+                footer_tagline: "Explore Ocala com segurança e simplicidade. Projeto criado com carinho para visitantes, famílias e novos moradores.",
+                footer_terms: "Termos de Uso",
+                footer_privacy: "Política de Privacidade",
+                footer_copyright: "© 2025 Ocalamap.org — Todos os Direitos Reservados.",
+                cat_item_activities: "Atividades",
+                cat_item_arts: "Artes e Cultura",
+                cat_item_museums: "Museus",
+                cat_item_family: "Diversão em Família",
+                cat_item_local: "Experiências Locais",
+                cat_item_nature: "Natureza",
+                cat_item_wildlife: "Santuários de Vida Selvagem",
+                cat_item_boating: "Passeios de Barco e Pesca",
+                cat_item_trails: "Trilhas e Parques",
+                cat_item_equine: "Equinos",
+                cat_item_horse_farms: "Fazendas de Cavalos (Agendamento)",
+                cat_item_riding: "Passeios a Cavalo e Guiados",
+                cat_item_schools: "Escolas",
+                cat_item_hospitals: "Hospitais",
+                cat_item_neighborhoods: "Bairros",
+                cat_item_shops: "Lojas e Mercados",
+                cat_item_rentals_charters: "Aluguéis e Fretamentos",
+                cat_item_canoe: "Aluguel de Canoas e Barcos",
+                cat_item_charters: "Fretamentos"
+            },
+            es: {
+                hero_badge: "Versión Actualizada 2025",
+                hero_title: 'Explore Ocala con <span class="text-accent">Confianza</span>.',
+                hero_subtitle: "El mapa perfecto para quienes quieren vivir lo mejor de la ciudad. Escuelas, hospitales, naturaleza y joyas ocultas.",
+                cta_button: "Abrir OcalaMap",
+                cta_open: "Abrir OcalaMap",
+                hero_feat_1: "Simple y Funcional",
+                hero_feat_2: "Categorías Curadas",
+                hero_feat_3: "Enlace Google Maps",
+                hero_feat_4: "Siempre Actualizado",
+                section_about: "Sobre Nosotros",
+                what_is_title: "¿Qué es OcalaMap?",
+                what_is_desc: "OcalaMap es un mapa interactivo completo, creado especialmente para visitantes, familias y nuevos residentes que quieren conocer Ocala sin complicaciones.",
+                feat_parks: "Parques, senderos y reservas naturales",
+                feat_outdoor: "Aventuras al aire libre",
+                feat_horses: "Paseos a caballo y granjas",
+                feat_culture: "Rutas culturales y museos",
+                feat_family: "Atracciones para niños y familias",
+                feat_schools: "Todas las escuelas públicas, privadas y charters",
+                feat_hospitals: "Todos los hospitales y centros de salud",
+                feat_shops: "Tiendas, tours, experiencias y más",
+                mission_statement: "Nuestra misión es facilitar su viaje y hacerle sentir como en casa — incluso si es su primera vez en la ciudad.",
+                why_title: "¿Por qué creamos OcalaMap?",
+                why_subtitle: "Sabemos cómo es llegar a una ciudad nueva y sentirse perdido. Por eso creamos esta herramienta.",
+                reason_security_title: "Seguridad",
+                reason_security_desc: "Vea todo antes de salir de casa. Planifique su ruta, elija el barrio ideal, encuentre escuelas y hospitales con claridad.",
+                reason_time_title: "Ahorre Tiempo",
+                reason_time_desc: "Nada de buscar en 20 sitios diferentes — aquí está todo organizado en un solo lugar.",
+                reason_clarity_title: "Claridad",
+                reason_clarity_desc: "Filtros simples → elija lo que quiere ver → clic → llegó.",
+                reason_experience_title: "Mejor Experiencia",
+                reason_experience_desc: "Seleccionamos solo lugares reales, confiables y que realmente valen la pena.",
+                categories_title: "Categorías Disponibles",
+                cat_activities: "Actividades y Cultura",
+                cat_nature: "Naturaleza y Aventura",
+                cat_equine: "Equinos y Experiencias",
+                cat_essential: "Servicios Esenciales",
+                cat_rentals: "Alquileres y Charters",
+                soon: "Próximamente",
+                more_coming: "¡Nuevas categorías llegarán muy pronto!",
+                who_title: "¿Para quién es OcalaMap?",
+                target_families_title: "Familias",
+                target_families_desc: "Descubran parques, actividades, escuelas y seguridad al mudarse a la ciudad.",
+                target_tourists_title: "Turistas",
+                target_tourists_desc: "Explore Ocala sin correr riesgos ni perder tiempo.",
+                target_residents_title: "Nuevos Residentes",
+                target_residents_desc: "Encuentre escuelas, hospitales, barrios tranquilos, zonas verdes y todo lo que necesita.",
+                target_horses_title: "Amantes de Caballos",
+                target_horses_desc: "Ocala es su paraíso — y OcalaMap le muestra los mejores lugares.",
+                cta_final_title: "¿Listo para explorar Ocala como nunca antes?",
+                cta_final_subtitle: "Descubra cada rincón de la ciudad con un mapa bonito, claro y confiable.",
+                cta_open_map: "Abrir OcalaMap",
+                footer_tagline: "Explore Ocala con seguridad y simplicidad. Proyecto creado con cariño para visitantes, familias y nuevos residentes.",
+                footer_copyright: "© 2025 Ocalamap.org — Todos los Derechos Reservados.",
+                cat_item_activities: "Actividades",
+                cat_item_arts: "Arte y Cultura",
+                cat_item_museums: "Museos",
+                cat_item_family: "Diversión Familiar",
+                cat_item_local: "Experiencias Locales",
+                cat_item_nature: "Naturaleza",
+                cat_item_wildlife: "Santuarios de Vida Silvestre",
+                cat_item_boating: "Navegación y Pesca",
+                cat_item_trails: "Senderos y Parques",
+                cat_item_equine: "Equitación",
+                cat_item_horse_farms: "Granjas de Caballos (Cita)",
+                cat_item_riding: "Equitación y Visitas Guiadas",
+                cat_item_schools: "Escuelas",
+                cat_item_hospitals: "Hospitales",
+                cat_item_neighborhoods: "Vecindarios",
+                cat_item_shops: "Tiendas y Mercados",
+                cat_item_rentals_charters: "Alquileres y Fletes",
+                cat_item_canoe: "Alquiler de Canoas y Botes",
+                cat_item_charters: "Alquiler de Barcos"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function detectLanguage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang.startsWith('pt')) return 'pt';
+            if (browserLang.startsWith('es')) return 'es';
+            return 'en';
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('ocala_lang', lang);
+
+            // Update UI
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update Flag/Text
+            const flags = { en: '🇺🇸', pt: '🇧🇷', es: '🇪🇸' };
+            const codes = { en: 'EN', pt: 'PT', es: 'ES' };
+
+            document.getElementById('current-flag').textContent = flags[lang];
+            document.getElementById('current-lang-code').textContent = codes[lang];
+
+            // Hide menu
+            document.getElementById('lang-menu').classList.add('hidden');
+        }
+
+        function toggleLangMenu() {
+            document.getElementById('lang-menu').classList.toggle('hidden');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('ocala_lang') || detectLanguage();
+            setLanguage(savedLang);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('lang-btn').contains(e.target) &&
+                !document.getElementById('lang-menu').contains(e.target)) {
+                document.getElementById('lang-menu').classList.add('hidden');
+            }
+        });
+
+    </script>
+</body>
+
+</html>

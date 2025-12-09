@@ -1,0 +1,875 @@
+[
+  {
+    "name": "Child\u2019s Haven South",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "1170 E Silver Springs Blvd, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Time Out Respite Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "108 SE 10th Ave, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Just For Kids Academy",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "1704 NE 25th Ave, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Cherished Development Schools",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK\u2013K",
+    "address": "431 North East 25th Avenue, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Reach Early Education Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "321 NE 25th Ave, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Righteous Seed Child Care Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK, K",
+    "address": "1465 NW 21st Avenue, Ocala, FL 34475",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Hobby Horse Ed Childcare Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK, K",
+    "address": "1980 Southeast 52nd Street, Ocala, FL 34480",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Tots-Tots Inc",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "1111 Southwest 17th Lane, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Small Talk II Child Care",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "212 Northeast 29th Street, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Jones Family Child Care",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "3230 NE 45th St, Ocala, FL 34479",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Graceway Academy",
+    "category": "Schools - Preschool",
+    "rating": "2.3",
+    "grades": "PK\u2013K",
+    "address": "2255 Southeast 38th Street, Ocala, FL 34480",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Country Learning Center",
+    "category": "Schools - Preschool",
+    "rating": "5",
+    "grades": "PK",
+    "address": "2101 East Silver Springs Boulevard, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Heavenly Hope Childcare Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "2424 Northeast Jacksonville Road, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "C F Learning Lab School Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "3434 Southwest 20th Street, Ocala, FL 34474",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Howard Academy",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "306 NW 7th Avenue, Ocala, FL 34475",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "C S D Howard Academy Head Start",
+    "category": "Schools - Preschool",
+    "rating": "5",
+    "grades": "PK",
+    "address": "306 NW 7th Ave, Ocala, FL 34475",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Angels in Arms",
+    "category": "Schools - Preschool",
+    "rating": "2.3",
+    "grades": "PK",
+    "address": "3140 Southeast 17th Place, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Academic Playland Child Care Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "5550 SE Hwy 484, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Highlands Baptist Day Care",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "3530 East Fort King Street, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Future Stars Academy",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK, K",
+    "address": "7180 Southeast Maricamp Road, Ocala, FL 34472",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Kid\u2019s Choice Academy",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "7177 Southeast Maricamp Road, Ocala, FL 34472",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Central Florida Child Care Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "605 East Silver Springs Blvd, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Newborn Family Day Care Home",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "421 Southwest 22nd Place, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Heaven\u2019s Gate Child Development Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "1400 NW 38th Ave, Ocala, FL 34475",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Debra Poole Family Day Care Center",
+    "category": "Schools - Preschool",
+    "rating": "5",
+    "grades": "PK",
+    "address": "4211 Northeast 22nd Avenue, Ocala, FL 34479",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Family Ties Child Care Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "3140 Southeast 11th Pl, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "First Step Family Child Care",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "5434 Northeast 15th Place, Ocala, FL 34479",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Pebbles-the Rock Day Care Center",
+    "category": "Schools - Preschool",
+    "rating": "5",
+    "grades": "PK",
+    "address": "3725 NE 7th St, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "New Zion Child Care Learning Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "727 NW 2nd St, Ocala, FL 34475",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "St Paulin Christian School",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "2002 SW 1st Ave, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "C D S Fort McCoy Head Start",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "14550 NE 110th Ave, Fort McCoy, FL 32134",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Children\u2019s Palace East & Academy",
+    "category": "Schools - Preschool",
+    "rating": "1",
+    "grades": "PK, K\u20131",
+    "address": "3423 Southeast 29th Terrace, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Contemporary Christian Academy",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK, 6\u201312",
+    "address": "527 SW 27th Ave, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Montessori Preparatory School of Ocala",
+    "category": "Schools - Preschool",
+    "rating": "3.5",
+    "grades": "PK, 1\u20135",
+    "address": "2620 SE Maricamp Road, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Totsville Preschool",
+    "category": "Schools - Preschool",
+    "rating": "1",
+    "grades": "PK, K\u201312",
+    "address": "9698 SE Maricamp Road, Ocala, FL 34472",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Grace Episcopal Church Early Learning Center/VPK",
+    "category": "Schools - Preschool",
+    "rating": "5",
+    "grades": "PK",
+    "address": "503 SE Broadway Street, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "C D S Mildred Bryant High School Head Start",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "17 NW 4th St, Ocala, FL 34475",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Advocacy Resource Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "2800 SE Maricamp Road, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Kendrick Child Development Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "20 Iris Ln, Ocala, FL 34472",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "All Stars Child Care Center \u2013 Ocala",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "2624 Northeast 3rd Street #200, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Lafaye\u2019s Precious Angels Child Care Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "5868 Southeast 15th Place, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "First United Methodist Preschool",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK, K",
+    "address": "1126 East Silver Springs Boulevard, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Tiny Tykes Child Care",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "911 Northeast 14th Street, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Trinity Pre-School & Academy",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK, K",
+    "address": "2801 SE Maricamp Road, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Training Up a Child Day Care",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "5120 Southwest 60th Avenue Road, Ocala, FL 34474",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Pathways to Learning Daycare",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "2420 Northeast 14th Street, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Lil' Sunshines Day Care & VPK",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "3601 Southeast 24th Street, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Over the Rainbow Learning Center & Preschool",
+    "category": "Schools - Preschool",
+    "rating": "4.8",
+    "grades": "PK",
+    "address": "304 Southeast 17th Street, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Kids Kampus Ocala Hills",
+    "category": "Schools - Preschool",
+    "rating": "4.8",
+    "grades": "PK",
+    "address": "2520 Southwest 2nd Avenue, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Cds Bronson Ii Head Start",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "10460 Northeast 25th Avenue #938, Ocala, FL 34479",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Grace Christian Academy",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "4410 SE 3rd Avenue, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Promiseland Academy",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "3732 NE Jacksonville Road, Ocala, FL 34479",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Discovery Christian Learning Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "3127 NE 28th Street, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Victory Academy Learning Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "757 SE 17th Street, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "New Beginnings Child Care Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "2511 NE 14th Street, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Nana Infants & Children Lc",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "517 Southeast 25th Avenue, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Make A Joyful Noise Academy",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "2218 SE Maricamp Road, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Loving Care Pre-School",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "2786 Southeast Maricamp Road, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Little Treasures Learning Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "2927 Northeast Jacksonville Road, Ocala, FL 34479",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Kiddieklub Early Learning Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "1401 Northeast 18th Street, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "First Steps Pre-School",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "3731 South East Lake Weir Avenue, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Discovery Christian Learning Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "8445 NE Jacksonville Road, Ocala, FL 34479",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Creative Kids Pre-School",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "2828 Southwest 20th Street, Ocala, FL 34474",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Children\u2019s Palace West Child Care Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "501 Southwest 10th Street, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Carousel Early Learning Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "2800 East Silver Springs Blvd, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "CDS Thelma A Griffith Child Care Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "1084 Northeast 36th Avenue #103, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Building Blocks PA-Ocala",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "3810 Southwest 30th Court #2, Ocala, FL 34474",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Building Blocks PA-Ocala (segunda unidade)",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "3810 Southwest 30th Court #2, Ocala, FL 34474",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Achieve Learning Center",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "743 Northeast 27th Avenue, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Creative Clinic Child Care Center-for-Infants",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK",
+    "address": "1339 Southeast 34th Street, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Kingdom Christian Academy/Precious Children Preschool",
+    "category": "Schools - Preschool",
+    "rating": "1",
+    "grades": "PK, K\u201312",
+    "address": "1731 Southwest 38th Street, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Victory Academy Ocala",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK\u20133",
+    "address": "5870 Southeast 15th Avenue, Ocala, FL 34480",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Christian Academy Of Hope",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK\u201312",
+    "address": "5960 Southwest 34th Street, Ocala, FL 34474",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Fordham Early Learning Academy",
+    "category": "Schools - Preschool",
+    "rating": "",
+    "grades": "PK\u20132",
+    "address": "4000 West Anthony Road, Ocala, FL 34475",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Dr N H Jones Elementary School",
+    "category": "Schools - Elementary",
+    "rating": "9/10",
+    "grades": "PK\u20135",
+    "address": "1900 Southwest 5th Street, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Eighth Street Elementary School",
+    "category": "Schools - Elementary",
+    "rating": "10/10",
+    "grades": "PK\u20135",
+    "address": "513 Southeast 8th Street, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Madison Street Academy of Visual and Performing Arts",
+    "category": "Schools - Elementary",
+    "rating": "9/10",
+    "grades": "PK\u20135",
+    "address": "401 Northwest Martin Luther King Jr. Avenue, Ocala, FL 34475",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Maplewood Elementary School",
+    "category": "Schools - Elementary",
+    "rating": "7/10",
+    "grades": "PK\u20135",
+    "address": "475 NW 57th Avenue, Ocala, FL 34482",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Ward-Highlands Elementary School",
+    "category": "Schools - Elementary",
+    "rating": "7/10",
+    "grades": "PK\u20135",
+    "address": "537 SE 36th Avenue, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Saddlewood Elementary School",
+    "category": "Schools - Elementary",
+    "rating": "7/10",
+    "grades": "PK\u20135",
+    "address": "3700 SW 43rd Court, Ocala, FL 34474",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Shady Hill Elementary School",
+    "category": "Schools - Elementary",
+    "rating": "7/10",
+    "grades": "PK\u20135",
+    "address": "5959 Southeast 68th Street, Ocala, FL 34472",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "College Park Elementary School",
+    "category": "Schools - Elementary",
+    "rating": "5/10",
+    "grades": "PK\u20135",
+    "address": "1330 SW 33rd Avenue, Ocala, FL 34474",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Marion Technical Institute",
+    "category": "Schools - Elementary",
+    "rating": "5/10",
+    "grades": "PK\u201312",
+    "address": "1614 SE Fort King Street, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Oakcrest Elementary School",
+    "category": "Schools - Elementary",
+    "rating": "4/10",
+    "grades": "PK\u20135",
+    "address": "1112 NE 28th Street, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Wyomina Park Elementary School",
+    "category": "Schools - Elementary",
+    "rating": "3/10",
+    "grades": "PK\u20135",
+    "address": "1700 NE 9th Street, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Grace Christian School",
+    "category": "Schools - Elementary",
+    "rating": "4/5 (avalia\u00e7\u00e3o privada)",
+    "grades": "PK\u201312",
+    "address": "4410 SE 3rd Avenue, Ocala, FL 34480",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "The Cornerstone School",
+    "category": "Schools - Elementary",
+    "rating": "4/5",
+    "grades": "PK\u20138",
+    "address": "2313 SE Lake Weir Avenue, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "New Generation School",
+    "category": "Schools - Elementary",
+    "rating": "",
+    "grades": "PK\u20136",
+    "address": "1139 SE 55th Court, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "St John Lutheran School",
+    "category": "Schools - Elementary",
+    "rating": "4/5",
+    "grades": "PK\u201312",
+    "address": "1915 SE Lake Weir Avenue, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Montessori Preparatory School",
+    "category": "Schools - Elementary",
+    "rating": "3.5/5",
+    "grades": "PK\u20138",
+    "address": "27 SE 15th Street Boulevard, Ocala, FL 34471",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Happy Hearts Kindergarten",
+    "category": "Schools - Elementary",
+    "rating": "",
+    "grades": "PK\u2013K",
+    "address": "2664 Northeast Jacksonville Road, Ocala, FL 34479",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Hale Academy",
+    "category": "Schools - Elementary",
+    "rating": "4/5",
+    "grades": "PK\u201312",
+    "address": "3443 Southwest 20th Street, Ocala, FL 34474",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Living Waters Christian Academy",
+    "category": "Schools - Elementary",
+    "rating": "2/5",
+    "grades": "PK\u201312",
+    "address": "12400 West Highway 40, Ocala, FL 34481",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Speech and Language Student Services",
+    "category": "Schools - Elementary",
+    "rating": "",
+    "grades": "PK\u201312",
+    "address": "5201 SE 41st Street, Ocala, FL 34480",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Cornerstone Academy \u2013 Ocala",
+    "category": "Schools - Elementary",
+    "rating": "",
+    "grades": "PK\u20136",
+    "address": "2022 NE 24th Street, Ocala, FL 34470",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Family Ties Day Care Center",
+    "category": "Schools - Elementary",
+    "rating": "",
+    "grades": "PK",
+    "address": "1711 NW 110th Ave, Ocala, FL 34475",
+    "city": "Ocala",
+    "state": "FL"
+  },
+  {
+    "name": "Sweethearts Day Care",
+    "category": "Schools - Elementary",
+    "rating": "",
+    "grades": "PK",
+    "address": "Ocala, FL (mesma regi\u00e3o)",
+    "city": "Ocala",
+    "state": "FL"
+  }
+]

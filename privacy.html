@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - OcalaMap</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="Privacy Policy for OcalaMap.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .text-accent {
+            color: #f97316;
+        }
+
+        .bg-accent {
+            background-color: #f97316;
+        }
+
+        .hover-bg-accent:hover {
+            background-color: #ea580c;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="container mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="logo.png" alt="OcalaMap Logo" class="h-8 md:h-10 w-auto">
+            </a>
+
+            <div class="flex items-center gap-4">
+                <!-- Language Selector -->
+                <div class="relative">
+                    <button id="lang-btn" onclick="toggleLangMenu()"
+                        class="flex items-center gap-2 px-3 py-1.5 rounded-full hover:bg-gray-100 transition-colors border border-gray-200 text-sm font-medium">
+                        <span id="current-flag">🇺🇸</span>
+                        <span id="current-lang-code">EN</span>
+                        <svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="lang-menu"
+                        class="hidden absolute right-0 top-full mt-2 w-32 bg-white rounded-lg shadow-xl border border-gray-100 py-1 overflow-hidden z-[60]">
+                        <button onclick="setLanguage('en')"
+                            class="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-left text-sm">🇺🇸
+                            English</button>
+                        <button onclick="setLanguage('es')"
+                            class="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-left text-sm">🇪🇸
+                            Español</button>
+                        <button onclick="setLanguage('pt')"
+                            class="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-left text-sm">🇧🇷
+                            Português</button>
+                    </div>
+                </div>
+
+                <a href="map.html"
+                    class="bg-accent hover-bg-accent text-white px-5 py-2 rounded-full font-semibold shadow-lg shadow-orange-500/20 transition-all transform hover:scale-105 text-sm md:text-base whitespace-nowrap"
+                    data-i18n="cta_button">
+                    Open OcalaMap
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="flex-grow container mx-auto px-4 md:px-6 py-12 max-w-4xl">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8" data-i18n="privacy_title">Privacy Policy</h1>
+
+        <div class="prose prose-blue max-w-none text-gray-600">
+            <p class="mb-4" data-i18n="last_updated">Last updated: 2025</p>
+
+            <h2 class="text-xl font-bold text-gray-800 mt-6 mb-3" data-i18n="section_1_title">1. Information Collection
+            </h2>
+            <p class="mb-4" data-i18n="section_1_text">OcalaMap does not require you to create an account to use the
+                map. We may collect anonymous usage data to improve our services (e.g., popular categories, search
+                terms).</p>
+            <p class="mb-4" data-i18n="section_1_text_site">The "My Location" feature uses your browser's Geolocation
+                API strictly on the client-side to center the map. We do not store or track your real-time location on
+                our servers.</p>
+
+            <h2 class="text-xl font-bold text-gray-800 mt-6 mb-3" data-i18n="section_2_title">2. Cookies</h2>
+            <p class="mb-4" data-i18n="section_2_text">We may use local storage or cookies to remember your preferences,
+                such as your selected language.</p>
+
+            <h2 class="text-xl font-bold text-gray-800 mt-6 mb-3" data-i18n="section_3_title">3. Third-Party Links</h2>
+            <p class="mb-4" data-i18n="section_3_text">Our website contains links to other websites (e.g., Google Maps).
+                We are not responsible for the privacy practices of other sites.</p>
+
+            <h2 class="text-xl font-bold text-gray-800 mt-6 mb-3" data-i18n="section_4_title">4. Changes to This Policy
+            </h2>
+            <p class="mb-4" data-i18n="section_4_text">We may update this Privacy Policy from time to time. We encourage
+                you to review this page periodically for any changes.</p>
+
+            <h2 class="text-xl font-bold text-gray-800 mt-6 mb-3" data-i18n="section_5_title">5. Contact</h2>
+            <p class="mb-4" data-i18n="section_5_text">If you have any questions about this Privacy Policy, please
+                contact us.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-100 mt-auto">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <img src="logo.png" alt="OcalaMap Logo" class="h-6 w-auto grayscale opacity-50">
+            </div>
+            <p class="text-gray-500 mb-6" data-i18n="footer_tagline">Explore Ocala with safety and simplicity.</p>
+            <div class="flex justify-center gap-6 mb-6 text-sm text-gray-500">
+                <a href="terms.html" class="hover:text-accent transition-colors" data-i18n="footer_terms">Terms of
+                    Service</a>
+                <a href="privacy.html" class="hover:text-accent transition-colors" data-i18n="footer_privacy">Privacy
+                    Policy</a>
+            </div>
+            <p class="text-sm text-gray-400" data-i18n="footer_copyright">© 2025 Ocalamap.org — All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                cta_button: "Open OcalaMap",
+                privacy_title: "Privacy Policy",
+                last_updated: "Last updated: 2025",
+                section_1_title: "1. Information Collection",
+                section_1_text: "OcalaMap does not require you to create an account to use the map. We may collect anonymous usage data to improve our services (e.g., popular categories, search terms).",
+                section_1_text_site: "The 'My Location' feature uses your browser's Geolocation API strictly on the client-side to center the map. We do not store or track your real-time location on our servers.",
+                section_2_title: "2. Cookies",
+                section_2_text: "We may use local storage or cookies to remember your preferences, such as your selected language.",
+                section_3_title: "3. Third-Party Links",
+                section_3_text: "Our website contains links to other websites (e.g., Google Maps). We are not responsible for the privacy practices of other sites.",
+                section_4_title: "4. Changes to This Policy",
+                section_4_text: "We may update this Privacy Policy from time to time. We encourage you to review this page periodically for any changes.",
+                section_5_title: "5. Contact",
+                section_5_text: "If you have any questions about this Privacy Policy, please contact us.",
+                footer_tagline: "Explore Ocala with safety and simplicity.",
+                footer_terms: "Terms of Service",
+                footer_privacy: "Privacy Policy",
+                footer_copyright: "© 2025 Ocalamap.org — All Rights Reserved."
+            },
+            es: {
+                cta_button: "Abrir OcalaMap",
+                privacy_title: "Política de Privacidad",
+                last_updated: "Última actualización: 2025",
+                section_1_title: "1. Recopilación de Información",
+                section_1_text: "OcalaMap no requiere que cree una cuenta para usar el mapa. Podemos recopilar datos de uso anónimos para mejorar nuestros servicios (por ejemplo, categorías populares, términos de búsqueda).",
+                section_1_text_site: "La función 'Mi Ubicación' utiliza la API de Geolocation de su navegador estrictamente en el lado del cliente para centrar el mapa. No almacenamos ni rastreamos su ubicación en tiempo real en nuestros servidores.",
+                section_2_title: "2. Cookies",
+                section_2_text: "Podemos utilizar almacenamiento local o cookies para recordar sus preferencias, como su idioma seleccionado.",
+                section_3_title: "3. Enlaces de Terceros",
+                section_3_text: "Nuestro sitio web contiene enlaces a otros sitios web (por ejemplo, Google Maps). No somos responsables de las prácticas de privacidad de otros sitios.",
+                section_4_title: "4. Cambios en esta Política",
+                section_4_text: "Podemos actualizar esta Política de Privacidad de vez en cuando. Le recomendamos que revise esta página periódicamente para ver cualquier cambio.",
+                section_5_title: "5. Contacto",
+                section_5_text: "Si tiene alguna pregunta sobre esta Política de Privacidad, contáctenos.",
+                footer_tagline: "Explore Ocala con seguridad y simplicidad.",
+                footer_terms: "Términos de Servicio",
+                footer_privacy: "Política de Privacidad",
+                footer_copyright: "© 2025 Ocalamap.org — Todos los Derechos Reservados."
+            },
+            pt: {
+                cta_button: "Abrir OcalaMap",
+                privacy_title: "Política de Privacidade",
+                last_updated: "Última atualização: 2025",
+                section_1_title: "1. Coleta de Informações",
+                section_1_text: "O OcalaMap não exige que você crie uma conta para usar o mapa. Podemos coletar dados de uso anônimos para melhorar nossos serviços (por exemplo, categorias populares, termos de pesquisa).",
+                section_1_text_site: "O recurso 'Minha Localização' usa a API de Geolocalização do seu navegador estritamente no lado do cliente para centralizar o mapa. Não armazenamos nem rastreamos sua localização em tempo real em nossos servidores.",
+                section_2_title: "2. Cookies",
+                section_2_text: "Podemos usar armazenamento local ou cookies para lembrar suas preferências, como seu idioma selecionado.",
+                section_3_title: "3. Links de Terceiros",
+                section_3_text: "Nosso site contém links para outros sites (por exemplo, Google Maps). Não somos responsáveis pelas práticas de privacidade de outros sites.",
+                section_4_title: "4. Mudanças nesta Política",
+                section_4_text: "Podemos atualizar esta Política de Privacidade de tempos em tempos. Encorajamos você a revisar esta página periodicamente para verificar quaisquer alterações.",
+                section_5_title: "5. Contato",
+                section_5_text: "Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco.",
+                footer_tagline: "Explore Ocala com segurança e simplicidade.",
+                footer_terms: "Termos de Uso",
+                footer_privacy: "Política de Privacidade",
+                footer_copyright: "© 2025 Ocalamap.org — Todos os Direitos Reservados."
+            }
+        };
+
+        let currentLang = 'en';
+
+        function detectLanguage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang.startsWith('pt')) return 'pt';
+            if (browserLang.startsWith('es')) return 'es';
+            return 'en';
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('ocala_lang', lang);
+
+            // Update UI
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update Flag/Text
+            const flags = { en: '🇺🇸', pt: '🇧🇷', es: '🇪🇸' };
+            const codes = { en: 'EN', pt: 'PT', es: 'ES' };
+
+            document.getElementById('current-flag').textContent = flags[lang];
+            document.getElementById('current-lang-code').textContent = codes[lang];
+
+            // Hide menu
+            document.getElementById('lang-menu').classList.add('hidden');
+        }
+
+        function toggleLangMenu() {
+            document.getElementById('lang-menu').classList.toggle('hidden');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('ocala_lang') || detectLanguage();
+            setLanguage(savedLang);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('lang-btn').contains(e.target) &&
+                !document.getElementById('lang-menu').contains(e.target)) {
+                document.getElementById('lang-menu').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>

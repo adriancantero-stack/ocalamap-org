@@ -1,0 +1,420 @@
+[
+  {
+    "name": "Vanguard High School",
+    "original_text": "1. Vanguard High School",
+    "type": "Public District",
+    "address": "7 Northwest 28th Street, Ocala, FL 34475",
+    "rating": "6/10",
+    "grades": "9\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Marion Technical Institute",
+    "original_text": "2. Marion Technical Institute",
+    "type": "Public District",
+    "address": "1614 East Fort King Street, Ocala, FL 34471",
+    "rating": "4/10",
+    "grades": "PK, 6\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - Middle",
+      "Schools - High",
+      "Schools - Preschool"
+    ]
+  },
+  {
+    "name": "Ocala Christian Academy",
+    "original_text": "3. Ocala Christian Academy",
+    "type": "Private",
+    "address": "1714 Southeast 36th Avenue, Ocala, FL 34471",
+    "rating": "3.7/5",
+    "grades": "PK\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Preschool",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "First Assembly Christian School & Daycare",
+    "original_text": "4. First Assembly Christian School & Daycare",
+    "type": "Private",
+    "address": "1827 Northeast 14th Street, Ocala, FL 34470",
+    "rating": "4/5",
+    "grades": "PK\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Preschool",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Marion Christian Academy",
+    "original_text": "5. Marion Christian Academy",
+    "type": "Private",
+    "address": "1644 NE 22nd Street, Ocala, FL 34470",
+    "rating": "",
+    "grades": "Ungraded",
+    "categories": []
+  },
+  {
+    "name": "Meadowbrook Academy",
+    "original_text": "6. Meadowbrook Academy",
+    "type": "Private",
+    "address": "4741 Southwest 20th Street, Ocala, FL 34474",
+    "rating": "3/5",
+    "grades": "K\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "St John Lutheran School",
+    "original_text": "7. St John Lutheran School",
+    "type": "Private",
+    "address": "1915 Southeast Lake Weir Avenue, Ocala, FL 34471",
+    "rating": "4.3/5",
+    "grades": "PK\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Preschool",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Cambridge Acad-Interactonst Fla",
+    "original_text": "8. Cambridge Acad-Interactonst Fla",
+    "type": "Private",
+    "address": "3838 SE Lake Weir Ave, Ocala, FL 34480",
+    "rating": "",
+    "grades": "6\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - Middle",
+      "Schools - High"
+    ]
+  },
+  {
+    "name": "Hale Academy",
+    "original_text": "9. Hale Academy",
+    "type": "Private",
+    "address": "3443 Southwest 20th Street, Ocala, FL 34474",
+    "rating": "4.3/5",
+    "grades": "PK\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Preschool",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Hillcrest School",
+    "original_text": "10. Hillcrest School",
+    "type": "Public District",
+    "address": "3143 Southeast 17th Street, Ocala, FL 34471",
+    "rating": "5/10",
+    "grades": "6\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - Middle",
+      "Schools - High"
+    ]
+  },
+  {
+    "name": "New Leaf Center",
+    "original_text": "11. New Leaf Center",
+    "type": "Public District",
+    "address": "3001 NE 28th Ave STE 001, Ocala, FL 34479",
+    "rating": "2/10",
+    "grades": "K\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Life Christian Academy",
+    "original_text": "12. Life Christian Academy",
+    "type": "Private",
+    "address": "3260 SE 58th Street, Ocala, FL 34480",
+    "rating": "",
+    "grades": "K\u201311",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High"
+    ]
+  },
+  {
+    "name": "New Horizon Academy",
+    "original_text": "13. New Horizon Academy",
+    "type": "Private",
+    "address": "1100 Northeast 15th Street, Ocala, FL 34470",
+    "rating": "4.3/5",
+    "grades": "4\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Trinity Catholic High School",
+    "original_text": "14. Trinity Catholic High School",
+    "type": "Private",
+    "address": "2600 Southwest 42nd Street, Ocala, FL 34471",
+    "rating": "3.5/5",
+    "grades": "9\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Academy of Biblical Character",
+    "original_text": "15. Academy of Biblical Character",
+    "type": "Private",
+    "address": "923 NE 36th St Ste E, Ocala, FL 34480",
+    "rating": "",
+    "grades": "Ungraded",
+    "categories": []
+  },
+  {
+    "name": "Community Technical & Adult Education Center",
+    "original_text": "16. Community Technical & Adult Education Center",
+    "type": "Public District",
+    "address": "1014 Southwest 7th Road, Ocala, FL 34477",
+    "rating": "",
+    "grades": "Ungraded",
+    "categories": []
+  },
+  {
+    "name": "Silver River Mentoring And Instruction",
+    "original_text": "17. Silver River Mentoring And Instruction",
+    "type": "Public District",
+    "address": "2730 Southeast Maricamp Road, Ocala, FL 34471",
+    "rating": "5/10",
+    "grades": "6\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - Middle",
+      "Schools - High"
+    ]
+  },
+  {
+    "name": "Pace Center For Girls, Inc.",
+    "original_text": "18. Pace Center For Girls, Inc.",
+    "type": "Public District",
+    "address": "328 Northeast 1st Avenue, Ocala, FL 34470",
+    "rating": "",
+    "grades": "6\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - Middle",
+      "Schools - High"
+    ]
+  },
+  {
+    "name": "Marion Virtual Franchise",
+    "original_text": "19. Marion Virtual Franchise",
+    "type": "Public District",
+    "address": "1614 East Fort King Street, Ocala, FL 34471",
+    "rating": "5/10",
+    "grades": "K\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Ocenas School",
+    "original_text": "20. Ocenas School",
+    "type": "Private",
+    "address": "2514 Northeast 12th Court, Ocala, FL 34470",
+    "rating": "",
+    "grades": "Ungraded",
+    "categories": []
+  },
+  {
+    "name": "Ambleside School Of Ocala",
+    "original_text": "21. Ambleside School Of Ocala",
+    "type": "Private",
+    "address": "507 Southeast Broadway Street, Ocala, FL 34471",
+    "rating": "5/5",
+    "grades": "K\u201310",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High"
+    ]
+  },
+  {
+    "name": "Contemporary Christian Academy",
+    "original_text": "22. Contemporary Christian Academy",
+    "type": "Private",
+    "address": "5175 SW 27th Ave, Ocala, FL 34471",
+    "rating": "",
+    "grades": "PK\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Preschool",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Contemporary Christian Academy (segunda unidade)",
+    "original_text": "23. Contemporary Christian Academy (segunda unidade)",
+    "type": "Private",
+    "address": "2825 SW 34th Ave, Ocala, FL 34474",
+    "rating": "4/5",
+    "grades": "K\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Marion Virtual Instruction Program",
+    "original_text": "24. Marion Virtual Instruction Program",
+    "type": "Public District",
+    "address": "1517 Southeast 30th Avenue, Ocala, FL 34471",
+    "rating": "",
+    "grades": "K\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Crossroads Academy",
+    "original_text": "25. Crossroads Academy",
+    "type": "Private",
+    "address": "3681 NE 7th Street, Ocala, FL 34470",
+    "rating": "5/5",
+    "grades": "3\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Victory Academy",
+    "original_text": "1. Victory Academy",
+    "type": "Private",
+    "address": "3401 SE Lake Weir Ave, Ocala, FL 34471",
+    "rating": "5/5",
+    "grades": "PK, K\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Preschool",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Crossroads Academy",
+    "original_text": "2. Crossroads Academy",
+    "type": "Private",
+    "address": "3681 Northeast 7th Street, Ocala, FL 34470",
+    "rating": "",
+    "grades": "3\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Mcso Adults",
+    "original_text": "3. Mcso Adults",
+    "type": "Public District",
+    "address": "700 Northwest 30th Avenue, Ocala, FL 34475",
+    "rating": "",
+    "grades": "8\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - Middle",
+      "Schools - High"
+    ]
+  },
+  {
+    "name": "Kingdom Christian Acad/Precious Children Preschool",
+    "original_text": "4. Kingdom Christian Acad/Precious Children Preschool",
+    "type": "Private",
+    "address": "10230 Southwest 9th Street, Ocala, FL 34471",
+    "rating": "1/5",
+    "grades": "PK\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Preschool",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Christian Academy of Hope",
+    "original_text": "5. Christian Academy of Hope",
+    "type": "Private",
+    "address": "907 Southwest 3rd Street, Ocala, FL 34471",
+    "rating": "",
+    "grades": "1\u201311",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High"
+    ]
+  },
+  {
+    "name": "Dr D D Brown Christian Academy of Hope",
+    "original_text": "6. Dr D D Brown Christian Academy of Hope",
+    "type": "Private",
+    "address": "907 Southwest 3rd Street, Ocala, FL 34471",
+    "rating": "",
+    "grades": "1\u201311",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High"
+    ]
+  },
+  {
+    "name": "Dr. D. D. Brown Christian Academy of Hope",
+    "original_text": "7. Dr. D. D. Brown Christian Academy of Hope",
+    "type": "Private",
+    "address": "907 Southwest 3rd Street, Ocala, FL 34471",
+    "rating": "",
+    "grades": "PK\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - High",
+      "Schools - Preschool",
+      "Schools - Middle"
+    ]
+  },
+  {
+    "name": "Marion County Acceleration Academy",
+    "original_text": "8. Marion County Acceleration Academy",
+    "type": "Public District",
+    "address": "1614 East Fort King Street, Ocala, FL 34471",
+    "rating": "",
+    "grades": "8\u201312",
+    "categories": [
+      "Schools - Elementary",
+      "Schools - Middle",
+      "Schools - High"
+    ]
+  }
+]
