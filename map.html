@@ -214,7 +214,7 @@
 
     <!-- Sidebar -->
     <aside id="sidebar"
-      class="w-full md:w-[360px] bg-white shadow-xl z-10 flex flex-col h-auto md:h-full border-r border-gray-200">
+      class="w-full md:w-[360px] bg-white shadow-xl z-10 flex flex-col h-[80vh] md:h-full border-r border-gray-200">
 
       <!-- Sidebar Header (Desktop) -->
       <div class="p-6 border-b border-gray-100 hidden md:block">
@@ -282,18 +282,18 @@
       </div>
 
       <!-- Places List -->
-      <div id="places-list" class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-4 bg-gray-50">
+      <div id="places-list" class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-4 bg-gray-50 max-h-full">
         <!-- Cards will be injected here -->
       </div>
     </aside>
 
     <!-- Map Container -->
-    <main id="map-container" class="flex-1 h-[600px] md:h-full relative z-0">
+    <main id="map-container" class="flex-1 min-h-[400px] md:h-full relative z-0">
       <div id="map" class="w-full h-full"></div>
 
       <!-- Back to List Button (Mobile Fullscreen) -->
       <button id="back-to-list-btn" onclick="toggleFullscreenMap()"
-        class="hidden fixed top-4 left-4 z-[9999] bg-white text-gray-800 px-4 py-2 rounded-lg shadow-2xl border-2 border-gray-400 font-semibold text-sm items-center gap-2 hover:bg-gray-50 transition-colors md:!hidden">
+        class="hidden fixed bottom-6 left-4 z-[9999] bg-white text-gray-800 px-4 py-2 rounded-lg shadow-2xl border-2 border-gray-400 font-semibold text-sm items-center gap-2 hover:bg-gray-50 transition-colors md:!hidden">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
         </svg>
@@ -6766,14 +6766,14 @@
       if (isFullscreen) {
         // Exit fullscreen - back to normal scroll layout
         sidebar.classList.remove('!hidden');
-        mapContainer.classList.remove('!h-full', '!fixed', '!inset-0');
-        mapContainer.classList.add('h-[600px]');
+        mapContainer.classList.remove('!h-full', '!fixed', '!inset-0', '!z-[9998]');
+        mapContainer.classList.add('min-h-[400px]');
         backBtn.classList.remove('flex');
         backBtn.classList.add('hidden');
       } else {
         // Enter fullscreen
         sidebar.classList.add('!hidden');
-        mapContainer.classList.remove('h-[600px]');
+        mapContainer.classList.remove('min-h-[400px]');
         mapContainer.classList.add('!h-full', '!fixed', '!inset-0', '!z-[9998]');
         backBtn.classList.remove('hidden');
         backBtn.classList.add('flex');
