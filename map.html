@@ -6539,10 +6539,12 @@
           const popupContent = `
                         <div class="font-sans">
                             <h3 class="font-bold text-lg mb-1">${place.name}</h3>
-                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full mb-2">${categoryName}</span>
-                            ${place.type ? `<span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded-full mb-2 ml-1">${place.type}</span>` : ''}
-                            ${place.rating ? `<span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full mb-2 ml-1">⭐ ${place.rating}</span>` : ''}
-                            ${place.grades ? `<span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full mb-2 ml-1">${place.grades}</span>` : ''}
+                            <div class="flex flex-wrap gap-1 mb-2">
+                              <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full">${categoryName}</span>
+                              ${place.type ? `<span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded-full">${place.type}</span>` : ''}
+                              ${place.rating ? `<span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full">⭐ ${place.rating}</span>` : ''}
+                              ${place.grades ? `<span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full">${place.grades}</span>` : ''}
+                            </div>
                             ${place.address ? `<p class="text-sm text-gray-600 mb-1">${place.address}</p>` : ''}
                             ${place.phone ? `<p class="text-sm text-gray-600 mb-2">${place.phone}</p>` : ''}
                             <a href="${getGoogleMapsLink(place)}" target="_blank" class="text-blue-600 hover:underline text-sm font-medium flex items-center">
@@ -6689,10 +6691,12 @@
           const popupContent = `
                   <div class="font-sans min-w-[240px] md:min-w-[300px]">
                       <h3 class="font-bold text-sm md:text-lg mb-1.5 leading-snug">${place.name}</h3>
-                      <span class="inline-block bg-blue-100 text-blue-800 text-[10px] md:text-xs px-2 py-0.5 rounded-full mb-1.5">${categoryName}</span>
-                      ${place.type ? `<span class="inline-block bg-purple-100 text-purple-800 text-[10px] md:text-xs px-2 py-0.5 rounded-full mb-1.5 ml-1">${place.type}</span>` : ''}
-                      ${place.rating ? `<span class="inline-block bg-yellow-100 text-yellow-800 text-[10px] md:text-xs px-2 py-0.5 rounded-full mb-1.5 ml-1">⭐ ${place.rating}</span>` : ''}
-                      ${place.grades ? `<span class="inline-block bg-green-100 text-green-800 text-[10px] md:text-xs px-2 py-0.5 rounded-full mb-1.5 ml-1">${place.grades}</span>` : ''}
+                      <div class="flex flex-wrap gap-1 mb-1.5">
+                        <span class="inline-block bg-blue-100 text-blue-800 text-[10px] md:text-xs px-2 py-0.5 rounded-full">${categoryName}</span>
+                        ${place.type ? `<span class="inline-block bg-purple-100 text-purple-800 text-[10px] md:text-xs px-2 py-0.5 rounded-full">${place.type}</span>` : ''}
+                        ${place.rating ? `<span class="inline-block bg-yellow-100 text-yellow-800 text-[10px] md:text-xs px-2 py-0.5 rounded-full">⭐ ${place.rating}</span>` : ''}
+                        ${place.grades ? `<span class="inline-block bg-green-100 text-green-800 text-[10px] md:text-xs px-2 py-0.5 rounded-full">${place.grades}</span>` : ''}
+                      </div>
                       ${place.address ? `<p class="text-xs md:text-sm text-gray-600 mb-1 leading-normal">${place.address}</p>` : ''}
                       ${place.phone ? `<p class="text-xs md:text-sm text-gray-600 mb-1.5 leading-normal">${place.phone}</p>` : ''}
                       <a href="${getGoogleMapsLink(place)}" target="_blank" class="text-blue-600 hover:underline text-xs md:text-sm font-medium flex items-center mt-1.5">
@@ -6779,7 +6783,7 @@
         mapContainer.classList.add('min-h-[400px]');
         backBtn.classList.remove('flex');
         backBtn.classList.add('hidden');
-        
+
         // Scroll to top to show header on mobile
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
