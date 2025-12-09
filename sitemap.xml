@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://ocalamap.org/</loc>
+    <lastmod>2025-12-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ocalamap.org/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ocalamap.org/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://ocalamap.org/?lang=pt"/>
+  </url>
+
+  <!-- Map Page -->
+  <url>
+    <loc>https://ocalamap.org/map</loc>
+    <lastmod>2025-12-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ocalamap.org/map?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ocalamap.org/map?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://ocalamap.org/map?lang=pt"/>
+  </url>
+
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://ocalamap.org/terms</loc>
+    <lastmod>2025-12-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ocalamap.org/terms?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ocalamap.org/terms?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://ocalamap.org/terms?lang=pt"/>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://ocalamap.org/privacy</loc>
+    <lastmod>2025-12-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ocalamap.org/privacy?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ocalamap.org/privacy?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://ocalamap.org/privacy?lang=pt"/>
+  </url>
+
+</urlset>

@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ocalamap.org/sitemap.xml
+
+# Disallow unnecessary files
+Disallow: /vercel.json
+Disallow: /*.py$
+Disallow: /*.json$
+Disallow: /*.txt$
+
+# Allow important resources
+Allow: /logo.png
+Allow: /favicon.png
+Allow: /*.html
+Allow: /*.css
+Allow: /*.js

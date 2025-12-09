@@ -8,12 +8,37 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <meta name="description"
         content="The definitive visual guide to discovering everything Ocala has to offer. Schools, hospitals, nature, and more.">
+    <meta name="keywords"
+        content="Ocala map, Ocala Florida, Ocala schools, Ocala hospitals, Ocala attractions, Ocala activities, Ocala nature, Ocala equine, horse country, Marion County, Florida tourism">
+    <meta name="author" content="OcalaMap.org">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ocalamap.org/">
+
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="en" href="https://ocalamap.org/?lang=en">
+    <link rel="alternate" hreflang="es" href="https://ocalamap.org/?lang=es">
+    <link rel="alternate" hreflang="pt" href="https://ocalamap.org/?lang=pt">
+    <link rel="alternate" hreflang="x-default" href="https://ocalamap.org/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ocalamap.org">
     <meta property="og:title" content="OcalaMap - Explore Ocala with Confidence">
     <meta property="og:description" content="The definitive visual guide to discovering everything Ocala has to offer.">
+    <meta property="og:image" content="https://ocalamap.org/logo.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ocalamap.org">
+    <meta name="twitter:title" content="OcalaMap - Explore Ocala with Confidence">
+    <meta name="twitter:description"
+        content="The definitive visual guide to discovering everything Ocala has to offer.">
+    <meta name="twitter:image" content="https://ocalamap.org/logo.png">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -69,6 +94,23 @@
             }
         }
     </style>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "OcalaMap",
+      "url": "https://ocalamap.org",
+      "description": "Interactive map of Ocala, Florida featuring schools, hospitals, activities, nature, and equine attractions.",
+      "inLanguage": ["en", "es", "pt"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ocalamap.org/map?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 </head>
 
 <body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden">
