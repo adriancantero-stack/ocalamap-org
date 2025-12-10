@@ -797,8 +797,24 @@
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('ocala_lang') || detectLanguage();
-            setLanguage(savedLang);
+            // 1. Check URL param
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+
+            // 2. Check LocalStorage
+            const savedLang = localStorage.getItem('ocala_lang');
+
+            let finalLang;
+
+            if (urlLang && ['pt', 'es', 'en'].includes(urlLang)) {
+                finalLang = urlLang;
+            } else if (savedLang) {
+                finalLang = savedLang;
+            } else {
+                finalLang = detectLanguage();
+            }
+
+            setLanguage(finalLang);
         });
 
         // Close menu when clicking outside

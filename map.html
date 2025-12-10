@@ -6499,16 +6499,27 @@
 
     // --- INITIALIZATION ---
     function init() {
-      // Load saved language or detect
+      // 1. Check URL param (highest priority) - good for sharing/SEO checks
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLang = urlParams.get('lang');
+
+      // 2. Check LocalStorage
       const savedLang = localStorage.getItem('ocala_lang');
-      if (savedLang) {
+
+      if (urlLang && ['pt', 'es', 'en'].includes(urlLang)) {
+        currentLang = urlLang;
+      } else if (savedLang) {
         currentLang = savedLang;
       } else {
+        // 3. Detect from Browser
         const browserLang = navigator.language || navigator.userLanguage;
         if (browserLang.startsWith('pt')) currentLang = 'pt';
         else if (browserLang.startsWith('es')) currentLang = 'es';
-        else currentLang = 'en'; // Default to English for everyone else
+        else currentLang = 'en';
       }
+
+      // Always save to persist the decision (e.g. if we came via URL or autodetection)
+      localStorage.setItem('ocala_lang', currentLang);
 
       initMap();
       renderFilters();
