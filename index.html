@@ -18,6 +18,8 @@
 
     <!-- Hreflang Tags -->
     <link rel="alternate" hreflang="en" href="https://ocalamap.org/?lang=en">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff">
     <link rel="alternate" hreflang="es" href="https://ocalamap.org/?lang=es">
     <link rel="alternate" hreflang="pt" href="https://ocalamap.org/?lang=pt">
     <link rel="alternate" hreflang="x-default" href="https://ocalamap.org/">
@@ -825,6 +827,17 @@
             }
         });
 
+
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
     </script>
 </body>
 
