@@ -156,7 +156,7 @@
   </style>
 </head>
 
-<body class="h-screen flex flex-col overflow-hidden bg-gray-50">
+<body class="h-[100dvh] flex flex-col overflow-hidden bg-gray-50">
 
   <!-- Mobile Header (Visible only on mobile) -->
   <div class="md:hidden bg-white p-4 shadow-sm z-40 flex justify-between items-center relative">
@@ -174,7 +174,7 @@
       </button>
       <!-- Dropdown -->
       <div id="lang-dropdown-mobile"
-        class="hidden absolute right-0 top-full mt-2 w-32 bg-white rounded-lg shadow-xl border border-gray-100 py-1 z-[9999] overflow-hidden">
+        class="hidden absolute right-0 top-full mt-2 w-auto min-w-[100px] bg-white rounded-lg shadow-xl border border-gray-100 py-1 z-[9999] overflow-hidden whitespace-nowrap">
         <button onclick="setLang('en')"
           class="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-50 transition-colors text-left">
           <span>🇺🇸</span> <span class="text-sm text-gray-700">EN</span>
@@ -333,7 +333,7 @@
 
         <!-- Tooltip Banner -->
         <div id="locate-tooltip"
-          class="bg-white text-gray-800 text-xs font-semibold px-3 py-2 rounded-lg shadow-lg border border-gray-200 mb-1 relative invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+          class="bg-white text-gray-800 text-xs font-semibold px-3 py-2 rounded-lg shadow-lg border border-gray-200 mb-1 relative invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 whitespace-nowrap">
           <span id="tooltip-text">Clique para saber sua Localização!</span>
           <!-- Triangle arrow -->
           <div
@@ -6845,6 +6845,9 @@
         // Resize map to fit container
         setTimeout(() => map.invalidateSize(), 100);
       }
+
+      // Ensure header is visible
+      window.scrollTo({ top: 0, behavior: 'instant' });
 
       // Save state
       localStorage.setItem('ocala_active_tab', tab);
