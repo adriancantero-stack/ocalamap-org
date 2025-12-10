@@ -828,6 +828,146 @@
         });
 
 
+
+    <!-- PWA Install Banner -->
+    <div id="install-banner" class="hidden fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-96 bg-white p-4 rounded-xl shadow-2xl z-[10000] border border-gray-200 flex flex-col gap-3 transition-transform duration-500 translate-y-full">
+        <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+                <img src="favicon.png" class="w-12 h-12 rounded-lg bg-gray-50 p-1" alt="App Icon">
+                <div>
+                    <h3 class="font-bold text-gray-900" id="install-title">Instalar OcalaMap</h3>
+                    <p class="text-xs text-gray-500" id="install-desc">Acesse mais rápido e offline.</p>
+                </div>
+            </div>
+            <button id="close-install-btn" class="text-gray-400 hover:text-gray-600 p-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <button id="install-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            <span id="install-btn-text">Instalar App</span>
+        </button>
+    </div>
+
+    <!-- IOS Instructions Modal -->
+    <div id="ios-install-modal" class="hidden fixed inset-0 bg-black/50 z-[10001] flex items-end md:items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-sm rounded-t-2xl md:rounded-2xl p-6 shadow-2xl transform transition-all">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-gray-900">Instalar no iPhone</h3>
+                <button onclick="document.getElementById('ios-install-modal').classList.add('hidden')" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="space-y-4 text-gray-600">
+                <p class="flex items-center gap-3">
+                    <span class="flex-shrink-0 w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center font-bold text-gray-700">1</span>
+                    <span>Toque no botão <strong class="text-blue-600">Compartilhar</strong> <svg class="w-5 h-5 inline-block text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg></span>
+                </p>
+                <p class="flex items-center gap-3">
+                    <span class="flex-shrink-0 w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center font-bold text-gray-700">2</span>
+                    <span>Role para baixo e toque em <strong class="text-gray-900">Adicionar à Tela de Início</strong> (Add to Home Screen)</span>
+                </p>
+                <p class="flex items-center gap-3">
+                    <span class="flex-shrink-0 w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center font-bold text-gray-700">3</span>
+                    <span>Confirme clicando em <strong class="text-blue-600">Adicionar</strong></span>
+                </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100 text-center text-sm text-gray-400">
+                OcalaMap.org
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // PWA Install Logic
+        let deferredPrompt;
+        const installBanner = document.getElementById('install-banner');
+        const installBtn = document.getElementById('install-btn');
+        const closeBannerBtn = document.getElementById('close-install-btn');
+        const iosModal = document.getElementById('ios-install-modal');
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+
+        // Translations for Banner
+        const pwaLang = localStorage.getItem('ocala_lang') || 'en';
+        const pwaTexts = {
+            en: { title: "Install OcalaMap", desc: "Faster access and offline mode.", btn: "Install App" },
+            es: { title: "Instalar OcalaMap", desc: "Acceso más rápido y sin conexión.", btn: "Instalar App" },
+            pt: { title: "Instalar OcalaMap", desc: "Acesso mais rápido e offline.", btn: "Instalar App" }
+        };
+
+        function setInstallText() {
+            const t = pwaTexts[pwaLang] || pwaTexts.pt;
+            document.getElementById('install-title').textContent = t.title;
+            document.getElementById('install-desc').textContent = t.desc;
+            document.getElementById('install-btn-text').textContent = t.btn;
+        }
+
+        // Show banner helper
+        function showBanner() {
+            setInstallText();
+            // Check if dismissed recently (e.g. 3 days)
+            const dismissed = localStorage.getItem('pwa_dismissed_ts');
+            if (dismissed) {
+                const days = (Date.now() - parseInt(dismissed)) / (1000 * 60 * 60 * 24);
+                if (days < 3) return; 
+            }
+            
+            installBanner.classList.remove('hidden');
+            // Small delay for slide animation
+            setTimeout(() => {
+                installBanner.classList.remove('translate-y-full');
+            }, 100);
+        }
+
+        function hideBanner() {
+            installBanner.classList.add('translate-y-full');
+            setTimeout(() => {
+                installBanner.classList.add('hidden');
+            }, 500);
+            localStorage.setItem('pwa_dismissed_ts', Date.now());
+        }
+
+        // Initialize Prompt Logic
+        if (!isStandalone) {
+            
+            // Android / Desktop Chrome
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                showBanner();
+            });
+
+            // iOS (Manual Check)
+            if (isIOS) {
+                // Show banner after a small delay if not dismissed
+                setTimeout(showBanner, 3000);
+            }
+
+            // Button Click Handler
+            installBtn.addEventListener('click', () => {
+                if (isIOS) {
+                    // Show iOS Instructions
+                    installBanner.classList.add('hidden'); // hide banner
+                    iosModal.classList.remove('hidden');
+                } else if (deferredPrompt) {
+                    // Trigger Android Prompt
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then((choiceResult) => {
+                        if (choiceResult.outcome === 'accepted') {
+                            hideBanner();
+                        }
+                        deferredPrompt = null;
+                    });
+                } else {
+                    // Fallback or weird browser state
+                    alert("Para instalar, use as opções do seu navegador (Adicionar à Tela de Início).");
+                }
+            });
+
+            closeBannerBtn.addEventListener('click', hideBanner);
+        }
+
         // Register Service Worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
