@@ -212,8 +212,9 @@
       /* Popup styling - desktop-like on mobile to prevent text wrapping */
       .leaflet-popup-content {
         white-space: nowrap !important;
-        min-width: 250px !important;
-        max-width: 350px !important;
+        min-width: auto !important;
+        width: fit-content !important;
+        text-align: center !important;
         font-size: 13px !important;
         line-height: 1.6 !important;
       }
