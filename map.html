@@ -162,7 +162,7 @@
 
   <!-- Mobile Header (Visible only on mobile) -->
   <div class="md:hidden bg-white p-4 shadow-sm z-40 flex justify-between items-center relative">
-    <a href="index.html" class="flex items-center">
+    <a href="/" class="flex items-center">
       <img src="logo.png" alt="OcalaMap" class="h-10 w-auto">
     </a>
     <div class="relative">
@@ -244,7 +244,7 @@
       <!-- Sidebar Header (Desktop) -->
       <div class="p-6 border-b border-gray-100 hidden md:block">
         <div class="flex justify-between items-start mb-2 relative">
-          <a href="index.html" class="flex items-center">
+          <a href="/" class="flex items-center">
             <img src="logo.png" alt="OcalaMap" class="h-12 w-auto">
           </a>
           <div class="relative">
@@ -7049,7 +7049,7 @@
         navigator.serviceWorker.register('/sw.js').then(registration => {
           console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }, err => {
-            console.log('ServiceWorker registration failed: ', err);
+          console.log('ServiceWorker registration failed: ', err);
         });
       });
     }

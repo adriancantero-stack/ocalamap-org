@@ -1,10 +1,9 @@
-const CACHE_NAME = 'ocalamap-v3';
+const CACHE_NAME = 'ocalamap-v4';
 const ASSETS_TO_CACHE = [
     '/',
-    '/index.html',
-    '/map.html',
-    '/terms.html',
-    '/privacy.html',
+    '/map',
+    '/terms',
+    '/privacy',
     '/logo.png',
     '/favicon.png',
     '/manifest.json'
