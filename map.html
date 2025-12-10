@@ -6924,72 +6924,82 @@
 
     // --- GEOLOCATION ---
     function getUserLocation() {
-      if (!navigator.geolocation) {
-        alert(currentLang === 'pt' ? "Geolocalização não é suportada pelo seu navegador." :
-          (currentLang === 'es' ? "La geolocalización no es compatible con su navegador." :
-            "Geolocation is not supported by your browser."));
+      if (!map) {
+        console.error("Map not initialized");
         return;
       }
 
       const locateBtn = document.getElementById('locate-btn');
       const originalIcon = locateBtn.innerHTML;
-      // Show loading state (spinner)
-      locateBtn.innerHTML = `<svg class="animate-spin h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>`;
 
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const lat = position.coords.latitude;
-          const lng = position.coords.longitude;
+      // Show loading spinner
+      locateBtn.innerHTML = `<svg class="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>`;
+      locateBtn.disabled = true;
 
-          // Reset button
-          locateBtn.innerHTML = originalIcon;
+      const onLocationFound = (e) => {
+        const lat = e.latlng ? e.latlng.lat : e.coords.latitude;
+        const lng = e.latlng ? e.latlng.lng : e.coords.longitude;
 
-          // Hide tooltip on success
-          const tooltip = document.getElementById('locate-tooltip');
-          if (tooltip) tooltip.style.display = 'none';
+        // Reset button
+        locateBtn.innerHTML = originalIcon;
+        locateBtn.disabled = false;
 
-          // Center map
-          map.flyTo([lat, lng], 15);
+        // Hide tooltip
+        const tooltip = document.getElementById('locate-tooltip');
+        if (tooltip) tooltip.style.display = 'none';
 
-          // Add or update marker
-          if (userLocationMarker) {
-            userLocationMarker.setLatLng([lat, lng]);
-          } else {
-            const pulseIcon = L.divIcon({
-              className: 'user-location-marker',
-              html: '<div class="user-location-ring"></div><div class="user-location-dot"></div>',
-              iconSize: [20, 20],
-              iconAnchor: [10, 10]
-            });
+        // Center map
+        map.flyTo([lat, lng], 15);
 
-            userLocationMarker = L.marker([lat, lng], { icon: pulseIcon }).addTo(map);
-            userLocationMarker.bindPopup(currentLang === 'pt' ? "Você está aqui" : (currentLang === 'es' ? "Estás aquí" : "You are here"));
-          }
+        // Add/Update Marker
+        if (userLocationMarker) {
+          userLocationMarker.setLatLng([lat, lng]);
+        } else {
+          const pulseIcon = L.divIcon({
+            className: 'user-location-marker',
+            html: '<div class="user-location-ring"></div><div class="user-location-dot"></div>',
+            iconSize: [20, 20],
+            iconAnchor: [10, 10]
+          });
 
-          userLocationMarker.openPopup();
-        },
-        (error) => {
-          // Reset button
-          locateBtn.innerHTML = originalIcon;
-
-          let msg = "";
-          switch (error.code) {
-            case error.PERMISSION_DENIED:
-              msg = currentLang === 'pt' ? "Usuário negou a solicitação de geolocalização." : (currentLang === 'es' ? "Usuario denegó la solicitud de geolocalización." : "User denied the request for Geolocation.");
-              break;
-            case error.POSITION_UNAVAILABLE:
-              msg = currentLang === 'pt' ? "Informações de local indisponíveis." : (currentLang === 'es' ? "Información de ubicación no disponible." : "Location information is unavailable.");
-              break;
-            case error.TIMEOUT:
-              msg = currentLang === 'pt' ? "A solicitação expirou." : (currentLang === 'es' ? "La solicitud ha caducado." : "The request to get user location timed out.");
-              break;
-            case error.UNKNOWN_ERROR:
-              msg = currentLang === 'pt' ? "Ocorreu um erro desconhecido." : (currentLang === 'es' ? "Ha ocurrido un error desconocido." : "An unknown error occurred.");
-              break;
-          }
-          alert(msg);
+          userLocationMarker = L.marker([lat, lng], { icon: pulseIcon }).addTo(map);
+          const popupMsg = currentLang === 'pt' ? "Você está aqui" : (currentLang === 'es' ? "Estás aquí" : "You are here");
+          userLocationMarker.bindPopup(popupMsg);
         }
-      );
+        userLocationMarker.openPopup();
+      };
+
+      const onLocationError = (error) => {
+        locateBtn.innerHTML = originalIcon;
+        locateBtn.disabled = false;
+
+        let msg = "";
+        // Handle both Leaflet error object and native GeolocationPositionError
+        const code = error.code || (error.message.includes('denied') ? 1 : 0);
+
+        if (code === 1) { // PERMISSION_DENIED
+          msg = currentLang === 'pt' ? "Permissão de localização negada." : (currentLang === 'es' ? "Permiso de ubicación denegado." : "Location permission denied.");
+        } else if (code === 2) { // POSITION_UNAVAILABLE
+          msg = currentLang === 'pt' ? "Localização indisponível." : (currentLang === 'es' ? "Ubicación no disponible." : "Location unavailable.");
+        } else if (code === 3) { // TIMEOUT
+          msg = currentLang === 'pt' ? "O tempo limite expirou." : (currentLang === 'es' ? "Se agotó el tiempo de espera." : "Location request timed out.");
+        } else {
+          msg = currentLang === 'pt' ? "Erro ao obter localização." : (currentLang === 'es' ? "Error al obtener la ubicación." : "Error getting location.");
+        }
+
+        alert(msg);
+      };
+
+      // Try using navigator.geolocation directly for consistent behavior
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => onLocationFound(position),
+          (error) => onLocationError(error),
+          { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+        );
+      } else {
+        onLocationError({ code: 0, message: "Geolocation not supported" });
+      }
     }
 
     // Start
