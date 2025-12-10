@@ -7039,8 +7039,8 @@
 
     // Initialize tab state on mobile
     if (window.innerWidth < 768) {
-      const savedTab = localStorage.getItem('ocala_active_tab') || 'list';
-      switchTab(savedTab);
+      // Force 'list' view on load as per user request (ignores persisted state)
+      switchTab('list');
     }
 
     // Register Service Worker
