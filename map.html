@@ -156,7 +156,7 @@
   </style>
 </head>
 
-<body class="h-screen flex flex-col md:flex-row overflow-hidden bg-gray-50">
+<body class="h-screen flex flex-col overflow-hidden bg-gray-50">
 
   <!-- Mobile Header (Visible only on mobile) -->
   <div class="md:hidden bg-white p-4 shadow-sm z-20 flex justify-between items-center relative">
@@ -189,6 +189,20 @@
     </div>
   </div>
 
+  <!-- Mobile Tabs (Visible only on mobile) -->
+  <div class="md:hidden bg-white border-b border-gray-200 sticky top-0 z-30">
+    <div class="flex">
+      <button id="tab-list" onclick="switchTab('list')"
+        class="flex-1 py-3 text-sm font-semibold border-b-2 border-blue-500 text-blue-600 transition-colors">
+        <span id="tab-list-text">Lista</span>
+      </button>
+      <button id="tab-map" onclick="switchTab('map')"
+        class="flex-1 py-3 text-sm font-semibold border-b-2 border-transparent text-gray-500 transition-colors">
+        <span id="tab-map-text">Mapa</span>
+      </button>
+    </div>
+  </div>
+
   <!-- Main Layout Wrapper -->
   <div class="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden relative">
 
@@ -214,7 +228,7 @@
 
     <!-- Sidebar -->
     <aside id="sidebar"
-      class="w-full md:w-[360px] bg-white shadow-xl z-10 flex flex-col h-[70vh] md:h-full border-r border-gray-200">
+      class="w-full md:w-[360px] bg-white shadow-xl z-10 flex flex-col h-full md:h-full border-r border-gray-200">
 
       <!-- Sidebar Header (Desktop) -->
       <div class="p-6 border-b border-gray-100 hidden md:block">
@@ -288,7 +302,7 @@
     </aside>
 
     <!-- Map Container -->
-    <main id="map-container" class="flex-1 min-h-[400px] md:h-full relative z-0">
+    <main id="map-container" class="hidden md:flex flex-1 h-full relative z-0">
       <div id="map" class="w-full h-full"></div>
 
       <!-- Back to List Button (Mobile Fullscreen) -->
@@ -363,6 +377,8 @@
         viewOnMap: "View on map",
         openGoogleMaps: "Open in Google Maps",
         backToList: "List",
+        tabList: "List",
+        tabMap: "Map",
         contact: "Contact:",
         noResults: "No places found matching your criteria.",
         allCategories: "All Categories",
@@ -392,6 +408,8 @@
         viewOnMap: "Ver en el mapa",
         openGoogleMaps: "Abrir en Google Maps",
         backToList: "Lista",
+        tabList: "Lista",
+        tabMap: "Mapa",
         contact: "Contacto:",
         noResults: "No se encontraron lugares con sus criterios.",
         allCategories: "Todas las categorías",
@@ -421,6 +439,8 @@
         viewOnMap: "Ver no mapa",
         openGoogleMaps: "Abrir no Google Maps",
         backToList: "Lista",
+        tabList: "Lista",
+        tabMap: "Mapa",
         contact: "Contato:",
         noResults: "Nenhum lugar encontrado com seus critérios.",
         allCategories: "Todas as categorias",
@@ -6737,6 +6757,12 @@
         backBtnText.textContent = t.backToList;
       }
 
+      // Update tab labels
+      const tabListText = document.getElementById('tab-list-text');
+      const tabMapText = document.getElementById('tab-map-text');
+      if (tabListText) tabListText.textContent = t.tabList;
+      if (tabMapText) tabMapText.textContent = t.tabMap;
+
       // Update Language Button State
       const flags = { 'en': '🇺🇸', 'es': '🇪🇸', 'pt': '🇧🇷' };
       const codes = { 'en': 'EN', 'es': 'ES', 'pt': 'PT' };
@@ -6765,6 +6791,42 @@
           }
         }
       });
+    }
+
+    // Switch between List and Map tabs (mobile only)
+    function switchTab(tab) {
+      const listTab = document.getElementById('tab-list');
+      const mapTab = document.getElementById('tab-map');
+      const sidebar = document.getElementById('sidebar');
+      const mapContainer = document.getElementById('map-container');
+
+      if (tab === 'list') {
+        // Activate list tab
+        listTab.classList.remove('border-transparent', 'text-gray-500');
+        listTab.classList.add('border-blue-500', 'text-blue-600');
+        mapTab.classList.remove('border-blue-500', 'text-blue-600');
+        mapTab.classList.add('border-transparent', 'text-gray-500');
+
+        // Show list, hide map
+        sidebar.classList.remove('hidden');
+        mapContainer.classList.add('hidden');
+      } else {
+        // Activate map tab
+        mapTab.classList.remove('border-transparent', 'text-gray-500');
+        mapTab.classList.add('border-blue-500', 'text-blue-600');
+        listTab.classList.remove('border-blue-500', 'text-blue-600');
+        listTab.classList.add('border-transparent', 'text-gray-500');
+
+        // Show map, hide list
+        sidebar.classList.add('hidden');
+        mapContainer.classList.remove('hidden');
+
+        // Resize map to fit container
+        setTimeout(() => map.invalidateSize(), 100);
+      }
+
+      // Save state
+      localStorage.setItem('ocala_active_tab', tab);
     }
 
     // Toggle fullscreen map mode (mobile only)
@@ -6815,9 +6877,9 @@
           marker._icon.style.filter = originalFilter;
         }, 2000);
 
-        // On mobile, enter fullscreen mode
+        // On mobile, switch to map tab
         if (window.innerWidth < 768) {
-          setTimeout(() => toggleFullscreenMap(), 300);
+          switchTab('map');
         }
       }
     }
@@ -6926,6 +6988,12 @@
 
     // Start
     init();
+
+    // Initialize tab state on mobile
+    if (window.innerWidth < 768) {
+      const savedTab = localStorage.getItem('ocala_active_tab') || 'list';
+      switchTab(savedTab);
+    }
 
   </script>
 </body>
