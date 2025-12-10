@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ocalamap-v5';
+const CACHE_NAME = 'ocalamap-v6';
 const ASSETS_TO_CACHE = [
     '/',
     '/map',
