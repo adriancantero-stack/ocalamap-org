@@ -23,9 +23,9 @@
 
 ```mermaid
 graph LR
-    Visitor["👤 Visitor"] -->|1. Request| DNSProvider["🌐 DNS Provider"]
-    DNSProvider -->|2. Resolve| EdgeNet["☁️ Vercel Edge"]
-    EdgeNet -->|3. Deliver (Cached)| Assets["📦 Static Assets"]
+    Visitor["👤 Visitor"] -- 1. Request --> DNSProvider["🌐 DNS Provider"]
+    DNSProvider -- 2. Resolve --> EdgeNet["☁️ Vercel Edge"]
+    EdgeNet -- 3. Deliver Cached --> Assets["📦 Static Assets"]
     
     subgraph "Browser Runtime"
     Assets --> HTML["📄 HTML5"]
