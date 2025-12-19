@@ -23,20 +23,20 @@
 
 ```mermaid
 graph LR
-    User["👤 Visitor"] -->|1. Request| DNS["🌐 DNS (Godaddy)"]
-    DNS -->|2. Resolve| Vercel["☁️ Vercel Edge Network"]
-    Vercel -->|3. Deliver (Cached)| Static["📦 Static Assets"]
+    Visitor["👤 Visitor"] -->|1. Request| DNSProvider["🌐 DNS Provider"]
+    DNSProvider -->|2. Resolve| EdgeNet["☁️ Vercel Edge"]
+    EdgeNet -->|3. Deliver (Cached)| Assets["📦 Static Assets"]
     
     subgraph "Browser Runtime"
-    Static --> HTML["📄 HTML5"]
+    Assets --> HTML["📄 HTML5"]
     HTML --> JS["⚡ Vanilla JS"]
-    JS --> Map["🗺️ Leaflet.js"]
-    Map --> Tiles["🖼️ OpenStreetMap Tiles"]
+    JS --> LEAFLET["🗺️ Leaflet.js"]
+    LEAFLET --> Tiles["🖼️ OSM Tiles"]
     end
     
-    style User fill:#f9f,stroke:#333,stroke-width:2px
-    style Vercel fill:#000000,stroke:#333,stroke-width:2px,color:white
-    style Map fill:#85ea2d,stroke:#333,stroke-width:2px,color:black
+    style Visitor fill:#f9f,stroke:#333,stroke-width:2px
+    style EdgeNet fill:#000000,stroke:#333,stroke-width:2px,color:white
+    style LEAFLET fill:#85ea2d,stroke:#333,stroke-width:2px,color:black
 ```
 
 </div>
